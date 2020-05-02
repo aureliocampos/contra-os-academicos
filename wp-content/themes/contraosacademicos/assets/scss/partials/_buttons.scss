@@ -1,0 +1,76 @@
+@mixin btn {
+  font-family: $font-bold;
+  padding: 0;
+  line-height: 1.2;
+  vertical-align: middle;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 0;
+  @include user-select(none);
+  @include touch-action(manipulation);
+  transition: 400ms;
+  &:hover {
+    text-decoration: none;
+  }
+  &:focus {
+    text-decoration: none;
+    outline: 0;
+  }
+}
+
+@mixin btnSimple($color) {
+  @include btn();
+  color: $color;
+  font-family: $font-bold;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  &:after{
+    content:"\e905";
+    font-family: $font-icomoon;
+    font-size: 1.1rem;
+    vertical-align: text-bottom;
+    transition: 500ms;
+    margin-left: 5px;
+  }
+  &:hover:after{
+    margin-left: 10px;
+  }
+}
+
+@mixin btnSection($color1, $color2) {
+	@include btn();
+	color: $color2;
+	background: $color1;
+	font-size: 0.9em;
+	text-transform: uppercase;
+	padding: 1em 1.5em;
+	border: 0.2em solid $color1;
+	@include notebook {
+		color: $color1;
+		background: transparent;
+		border: 0.2em solid $color1;
+		&:hover {
+        color: $color2;
+        background: $color1;
+        border: 0.2em solid $color1;
+      }
+    }
+}
+
+.mjv-section-btn-container {
+  @include flex($justify-content:center, $align-item:center);
+  margin-top: 2.6em;
+}
+.mjv-simple-btn-container {
+  margin-top: 0.8em;
+}
+
+.mjv-simple-btn.purple {
+  @include btnSimple($c-purple);
+}
+.mjv-section-btn.purple {
+  @include btnSection($c-purple, $c-white);
+}
+.mjv-section-btn.yellow {
+  @include btnSection($c-yellow, $c-white);
+}

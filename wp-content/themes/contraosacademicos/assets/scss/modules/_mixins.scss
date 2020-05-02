@@ -1,0 +1,69 @@
+@mixin flex ($align-item:false, $align-content:false, $justify-item:false, $justify-content:false, $wrap:false, $flex-direction:false) {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    @if $wrap {flex-wrap: $wrap; -webkit-flex-wrap: $wrap; -ms-flex-wrap: $wrap;}
+    @if $align-item { align-items: $align-item; -webkit-align-items:$align-item;}
+    @if $align-content { align-items: $align-content; -webkit-align-items:$align-content;}
+    @if $justify-item { justify-items: $justify-item;}
+    //-webkit-justify-items:$justify-item;
+    @if $justify-content { justify-content: $justify-content; -webkit-justify-content:$justify-content;}
+    @if $flex-direction { flex-direction: $flex-direction; -webkit-flex-direction:$flex-direction; -ms-flex-direction: $flex-direction;}
+    }
+  @mixin nospace() {
+    margin: 0!important;
+    padding: 0!important;
+  }
+  @mixin box-shadow ($shadow){
+    -webkit-box-shadow:$shadow;
+    -moz-box-shadow:$shadow;
+    box-shadow:$shadow;
+    }
+  @mixin border-radius ($radius) {
+    -webkit-border-radius:$radius;
+    -moz-border-radius:$radius;
+    border-radius:$radius;
+    }
+  @mixin block-center {
+    display:block;
+    margin: {
+      left: auto;
+      right: auto;
+      }
+    }
+  @mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+    }
+  @mixin transition($values) {
+    -webkit-transition: $values;
+    -moz-transition: $values;
+    //-ms-transition: $values;
+    -o-transition: $values;
+    transition: $values;
+    }
+  @mixin user-select ($attr) {
+    -webkit-user-select: $attr;
+    -moz-user-select: $attr;
+    -ms-user-select: $attr;
+    user-select: $attr;
+    }
+  @mixin touch-action ($attr) {
+    -ms-touch-action: $attr;
+    touch-action: $attr;
+    }
+  .row-flex {
+    @include flex($justify-content:center);
+  }
+  .small-logo {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto 0 auto;
+  }
+  

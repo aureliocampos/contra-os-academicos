@@ -1,0 +1,72 @@
+
+.coa-footer {
+	.coa-footer-container {
+		background: $c-black;
+		padding: 20px;
+	}
+}
+
+.coa-footer-terms {
+	.terms-items {
+		@include flex($justify-content:center, $align-item:center);
+		margin-top: 1em;
+		@include notebook {
+			@include flex($justify-content:flex-start);
+		}
+		.terms-item {
+			.term-name {
+				font-family: $font-regular;
+				font-size: 0.9em;
+				color: $c-white;
+				@include transition(300ms);
+				&:hover {
+					color: $c-white;
+				}
+			}
+		}
+		.line {
+			display: block;
+			width: 1px;
+			height: 20px;
+			background: $c-black;
+			margin: 0 0.6em;
+		}
+	}
+}
+.coa-footer-license {
+	margin-top: 0.5em;
+	.lincense-text {
+		font-family: $font-regular;
+		font-size: 0.65em;
+		color: $c-white;
+		text-align: center;
+		@include notebook {
+			text-align: left;
+		}
+	}
+}
+.coa-footer-nav {
+	display: none;
+	@include notebook {
+		display: block;
+		width: 35%;
+		float: left;
+	}
+	.coa-nav-items {
+		.coa-nav-item {
+			.coa-nav-link {
+				font-family: $font-bold;
+				font-size: .8em;
+				color: #fff;
+				text-transform: uppercase;
+				@include transition(300ms);
+				border-left: 3px solid transparent;
+				&:hover {
+					border-left: 3px solid $c-black;
+					padding-left: 10px;
+					color: $c-white;
+				}
+			}
+		}
+	}
+}

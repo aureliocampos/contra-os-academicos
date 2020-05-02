@@ -1,0 +1,27 @@
+.coa-social-midias {
+	@include notebook {
+		clear: both;
+		padding-top: 1.2em;
+	}
+	.midias-items {
+		@include flex($justify-content:center, $align-item:center);
+		margin-top: 1em;
+		@include notebook {
+			@include flex($justify-content:flex-start);
+		}
+		.midias-item {
+			width: 25px;
+			height: 25px;
+			margin: 0 0.25em;
+			a{
+				color: $c-black-lead;
+				display: block;
+				font-size: 1.2rem;
+				transition: 300ms;
+				&:hover{
+					color:$c-white
+				}
+			}
+		}
+	}
+}

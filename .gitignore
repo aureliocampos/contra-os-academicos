@@ -1,0 +1,26 @@
+# Paths
+wp-admin/
+wp-includes/
+wp-content/plugins/
+wp-content/languages/
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/themes/twentynineteen
+
+# Files
+.htaccess
+wp-config.php
+wp-config-sample.php
+wp-blog-header.php
+wp-comments-post.php
+wp-activate.php
+wp-cron.php
+wp-load.php
+wp-links-opml.php
+wp-login.php
+wp-mail.php
+wp-settings.php
+wp-signup.php
+wp-trackback.php
+xmlrpc.php
+
