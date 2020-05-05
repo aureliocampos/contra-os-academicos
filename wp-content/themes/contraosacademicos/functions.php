@@ -15,8 +15,9 @@
 
     // include_once (get_template_directory (). '/theme-assets/theme-supports/custom-post-types.php');
     // include_once (get_template_directory (). '/theme-support/custom-taxonomy.php');
-    // include_once (get_template_directory (). '/theme-assets/theme-supports/theme-supports.php');
+    include_once (get_template_directory (). '/theme-assets/theme-supports/theme-supports.php');
     // include_once (get_template_directory (). '/theme-assets/theme-supports/widgets.php');
+    include_once (get_template_directory (). '/theme-assets/theme-supports/custom-blocks.php');
 
     /**
      * Arquivos de plugins auxiliares de programação.
@@ -24,8 +25,8 @@
      *
      */
     
-    //include_once (get_template_directory (). '/theme-assets/theme-cdns/wp-cdns.php');
-    //include_once (get_template_directory (). '/theme-assets/theme-libs/owl-carousel.php');
+    include_once (get_template_directory (). '/theme-assets/theme-cdns/wp-cdns.php');
+    include_once (get_template_directory (). '/theme-assets/theme-libs/owl-carousel.php');
 
     /**
      * Arquivos base de estilos e scripts para o tema.

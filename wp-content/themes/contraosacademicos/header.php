@@ -11,9 +11,11 @@
 
 <header class="coa-header">
 	<div class="coa-header-container">
-		<figure class="coa-logo">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/coa.png" alt="" class="embed-responsive embed-responsive-16by9">
-		</figure>
+		<div class="container-logo">
+			<figure class="coa-logo">
+				<img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/cropped-banner-coa-teste.png" alt="" class="embed-responsive">
+			</figure>
+		</div>
 		<div class="coa-header-menu">
 			<div class="coa-menu-hamburguer">
 				<div class="coa-line"></div>
@@ -29,5 +31,18 @@
 			'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
 			'theme_location'  => '',
 			) ); ?> 
+			<div class="medias">
+				<ul>
+					<li>
+						<span></span>
+					</li>
+					<li>
+						<span></span>
+					</li>
+					<li>
+						<span></span>
+					</li>
+				</ul>
+			</div>
 	</div>
 </header>

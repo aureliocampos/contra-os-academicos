@@ -1,5 +1,5 @@
-<section class="mjv-banner banner-image">
-	<figure class="mjv-banner-container">
+<section class="coa-banner banner-image">
+	<figure class="coa-banner-container">
 		<?php 
 			$image = get_sub_field('acf_banner_image');
 			if( !empty( $image ) ): ?>

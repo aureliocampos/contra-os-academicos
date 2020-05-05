@@ -1,14 +1,6 @@
+<?php get_template_part('includes/template-parts/newsletter/newsletter');?>
 <footer class="coa-footer">
     <div class="coa-footer-container">
-		<?php wp_nav_menu( array( 
-			'container'       => 'nav',
-			'container_class' => 'coa-footer-nav',
-			'menu_class'      => 'coa-nav-items',
-			'echo'            => true,
-			'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
-			'theme_location'  => '',
-			) ); ?>
-        <?php get_template_part('includes/template-parts/social-media/social-media'); ?>
         <div class="coa-footer-terms">
             <ul class="terms-items">
                 <li class="terms-item">

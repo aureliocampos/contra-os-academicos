@@ -1,19 +1,20 @@
 /* HEADER */
 .coa-header {
 	position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-	background: $c-white;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: $c-black;
 	box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, 0.5);
 	z-index: 9;
    .coa-header-container {
-      @include flex($justify-content:space-between, $align-item:center);
-		height: 60px;
+    @include flex($justify-content:space-between, $align-item:center);
+		height: 80px;
 		padding: 0 20px;
 		position: relative;
-		.coa-logo {
-			width: 70px;
+		@include tablet-landscape {
+			max-width: 1400px;
+    	margin: 0 auto;
 		}
 		.coa-header-menu {
 			height: 25px;
@@ -28,7 +29,7 @@
 			.coa-line {
 				width: 100%;
 				height: 3px;
-				background: $c-black;
+				background: $c-white;
 				margin: 5px 0;
 				transition: 400ms;
 				
@@ -63,34 +64,38 @@
 	top: 60px;
 	left: -300rem;
 	max-width: 100%;
-	background-color: $c-purple;
+	background-color: $c-black;
 	width: 100%;
 	height: 100vh;
 	transition: 400ms;
 	@include notebook {
 		position: static;
 		max-width: 100%;
+		width: 60%;
+    height: auto;
 		background-color: transparent;
-		width: auto;
-    	height: auto;
+		
 	}
 	.coa-nav-items {
 		padding: 20px;
 		@include notebook {
-			@include flex();
+			@include flex($justify-content:center);
     		padding: 0;
 		}
 		.coa-nav-item {
 			margin: 15px 0;
+			&:after {
+				display: block;
+				content: '';
+				width: 0;
+				height: 3px;
+				background-color: $c-yellow;
+				transition: 400ms;
+			}
 			@include notebook {
 				margin: 0 10px;
 				&:after {
-					display: block;
-					content: '';
-					width: 0;
-					height: 5px;
-					background-color: $c-purple;
-					transition: 400ms;
+					margin: 0 auto;
 				}
 				&:hover {
 					&:after {
@@ -99,18 +104,58 @@
 				}
 			}
 			.coa-nav-link {
-				font-family: $font-bold;
-				font-size: 0.9em;
-				color: $c-white;
+				font: 800 1em $f-lato;
+				color: $c-gray;
 				text-transform: uppercase;
+				@include transition(400ms);
 				@include notebook {
-					font-size: 0.75em;
-					color: $c-black;
+					color: $c-gray;
+					&:hover {
+						color: $c-white;
+					}
 				}
+			}
+		}
+		.current_page_item {
+			&:after {
+				width: 10%;
+				@include notebook {
+					width: 100%;
+				}
+			}
+			.coa-nav-link {
+				color: $c-white;
 			}
 		}
 	}
 }
 .coa-header-nav.active {
 	left: 0;
+}
+.container-logo {
+	@include flex($justify-content:center);
+	width: 20%;
+	.coa-logo {
+		width: 70px;
+	}
+}
+.medias {
+	display: none;
+	@include tablet-landscape {
+		display: block;
+		width: 20%;
+	}
+  ul {
+    @include flex($justify-content:center, $align-item:center);
+    li {
+			margin: 0 0.5em;
+			cursor: pointer;
+      span {
+        display: block;
+        width: 25px;
+        height: 25px;
+        background: pink;
+      }
+    }
+  }
 }
