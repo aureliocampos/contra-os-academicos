@@ -103,7 +103,7 @@ hr {
     width: 70%;
   }
   @include notebook {
-    width: 50%;
+    width: 60%;
   }
 }
 .paragraph {
@@ -419,4 +419,10 @@ hr {
 }
 .owl-theme .owl-dots .owl-dot.active span{
   background: $c-red;
+  outline: none;
+}
+.owl-dot {
+  &:focus {
+    outline: none;
+  }
 }
