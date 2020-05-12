@@ -7,11 +7,9 @@
 
 // Default Styles
 html {
+  font-family: $f-lato;
   color: $c-black;
   line-height: 1.4;
-}
-body {
-  font-family: $f-lato;
 }
 hr {
   width: 60%;
@@ -140,12 +138,45 @@ hr {
 }
 
 // Section Content Styles
-.flex-column-center {
+.block-content.content-column-count {
+  margin-bottom: 2em;
+  @include tablet {
+    column-count: 3;
+    column-gap: 3em;
+    max-height: 500px;
+    overflow: hidden;
+    .text-content {
+      width: 100%;
+      margin: 1em 0;
+    }
+    hr {
+      width:90%;
+      border-color: $c-red;
+      margin-block-start: 1.5em;
+      margin-block-end: 1.5em;
+    }
+    .blockquote-content {
+      font: 600 0.9em $f-lato;
+      font-style: italic;
+      color: $c-red;
+      line-height: 1.5;
+    }
+  }
+  .figure {
+    margin: 2em 0;
+    @include tablet {
+      width: 70%;
+      margin: 1em auto;
+    }
+    &:last-of-type {
+      width: 100%;
+    }
+  }
+}
+.section-content-a > .block-content {
   @include tablet {
     @include flex($justify-content:center, $align-item:center);
   }
-}
-.block-content-A {
   .figure {
     position: relative;
     margin-top: 1em;
@@ -429,3 +460,55 @@ hr {
   }
 }
 
+.editor-list-items {
+  @include notebook {
+    @include flex($justify-content:space-between, $align-item:center);
+  }
+  .list-item {
+    text-align: center;
+    @include smartphone {
+      &:first-of-type {
+        margin: 2.5em 0;
+      }
+      &:nth-of-type(2) {
+        border-top: 1.5pt solid $c-light-gray;
+        border-bottom: 1.5pt solid $c-light-gray;
+        margin-top: 0;
+        padding: 2.5em 0;
+      }
+      &:last-of-type {
+        margin-top: 2.5em;
+      }
+    }
+    @include notebook {
+      width: 30%;
+      margin: 1.5em 0 0 0;
+      &:nth-of-type(2) {
+        border: none;
+        border-left: 1.5pt solid $c-light-gray;
+        border-right: 1.5pt solid $c-light-gray;
+        padding: 0 2em;
+      }
+    }
+    .circle {
+      @include flex($justify-content:center, $align-item:center);
+      span {
+        @include flex($justify-content:center, $align-item:center);
+        width: 50px;
+        height: 50px;
+        font: 600 1.5em $f-lato;
+        color: $c-yellow;
+        background-color: $c-black;
+        border-radius: 100%;
+      }
+    }
+    .list-item-title {
+      font: 800 1.2em $f-lato;
+      text-transform: uppercase; 
+      margin-top: 0.7em;
+    }
+    .list-item-text {
+      margin-top: 0.5em;
+    }
+  }
+}
