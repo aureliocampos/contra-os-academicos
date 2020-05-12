@@ -6,7 +6,7 @@
       <li class="list-item">
         <article class="list-item-article">
           <figure class="list-item-figure">
-            <img src="http://localhost:8000/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
           </figure>
           <div class="list-item-info">
             <div class="flex"><h4 class="list-item-category">| Categoria</h4><time class="list-item-time">04/05/2020</time></div>
@@ -18,7 +18,7 @@
       <li class="list-item">
         <article class="list-item-article">
           <figure class="list-item-figure">
-            <img src="http://localhost:8000/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
           </figure>
           <div class="list-item-info">
             <div class="flex"><h4 class="list-item-category">| Categoria</h4><time class="list-item-time">04/05/2020</time></div>
@@ -29,7 +29,7 @@
       </li><li class="list-item">
         <article class="list-item-article">
           <figure class="list-item-figure">
-            <img src="http://localhost:8000/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
           </figure>
           <div class="list-item-info">
             <div class="flex"><h4 class="list-item-category">| Categoria</h4><time class="list-item-time">04/05/2020</time></div>
@@ -40,7 +40,7 @@
       </li><li class="list-item">
         <article class="list-item-article">
           <figure class="list-item-figure">
-            <img src="http://localhost:8000/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
           </figure>
           <div class="list-item-info">
             <div class="flex"><h4 class="list-item-category">| Categoria</h4><time class="list-item-time">04/05/2020</time></div>
@@ -51,7 +51,7 @@
       </li><li class="list-item">
         <article class="list-item-article">
           <figure class="list-item-figure">
-            <img src="http://localhost:8000/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
           </figure>
           <div class="list-item-info">
             <div class="flex"><h4 class="list-item-category">| Categoria</h4><time class="list-item-time">04/05/2020</time></div>
@@ -62,7 +62,7 @@
       </li><li class="list-item">
         <article class="list-item-article">
           <figure class="list-item-figure">
-            <img src="http://localhost:8000/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
           </figure>
           <div class="list-item-info">
             <div class="flex"><h4 class="list-item-category">| Categoria</h4><time class="list-item-time">04/05/2020</time></div>

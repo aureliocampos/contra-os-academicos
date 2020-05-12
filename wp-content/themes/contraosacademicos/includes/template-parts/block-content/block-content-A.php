@@ -5,11 +5,11 @@
     <p class="text-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut ero labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco poriti laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco poriti laboris nisi ut aliquip ex ea commodo consequat.</p>
     <div class="flex-column-center block-content-A">
       <figure class="figure">
-        <img src="http://localhost:8000/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" class="embed-responsive">
+        <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" class="embed-responsive">
         <a href="#" class="cta-image">Saiba mais</a>
       </figure>
       <figure class="figure">
-        <img src="http://localhost:8000/wp-content/uploads/2020/05/maxresdefault.png" alt="" class="embed-responsive">
+        <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/maxresdefault.png" alt="" class="embed-responsive">
         <a href="#" class="cta-image">Saiba mais</a>
       </figure>
     </div>

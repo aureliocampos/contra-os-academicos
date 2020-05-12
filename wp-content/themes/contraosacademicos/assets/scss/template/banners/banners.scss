@@ -7,7 +7,7 @@
 	.coa-banner-container {
 		max-width: 900px;
 		text-align: center;
-		padding: 0 1em;
+		padding: 1em;
 	}
 }
 .coa-banner.banner-primary {
@@ -15,27 +15,30 @@
 	height: 100vh;
 }
 .coa-banner.banner-secondary {
-	height: 80vh;
+	height: 50vh;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	.coa-banner-title{
-		@include tablet-landscape {
-			font-size: 5rem;
-		}
+	@include notebook {
+    height: 85vh;
   }
+	.coa-banner-container {
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+		border-radius: 5px;
+	}
 }
 
 .coa-banner-title {
 	font: 400 2.5em $f-spectral;
   color: $c-yellow;
   @include notebook {
-    font-size: 4em;
+    font-size: 4.5em;
   }
 }
 
 .coa-banner-subtitle {
-	font: 400 1.1em $f-lato;
+	font: 400 1.15em $f-lato;
   color: $c-light-gray;
   margin-top: 0.7em;
   @include notebook {

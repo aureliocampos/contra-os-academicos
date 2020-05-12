@@ -5,27 +5,27 @@
     <ul class="list-items-images">
       <li class="list-item">
         <figure class="list-item-figure">
-          <img src="http://localhost:8000/wp-content/uploads/2020/05/USJ-LogoBranco.png" alt="" srcset="" class="embed-responsive">
+          <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/USJ-LogoBranco.png" alt="" srcset="" class="embed-responsive">
         </figure>
       </li>
       <li class="list-item">
         <figure class="list-item-figure">
-          <img src="http://localhost:8000/wp-content/uploads/2020/05/USJ-LogoBranco.png" alt="" srcset="" class="embed-responsive">
+          <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/USJ-LogoBranco.png" alt="" srcset="" class="embed-responsive">
         </figure>
       </li>
       <li class="list-item">
         <figure class="list-item-figure">
-          <img src="http://localhost:8000/wp-content/uploads/2020/05/USJ-LogoBranco.png" alt="" srcset="" class="embed-responsive">
+          <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/USJ-LogoBranco.png" alt="" srcset="" class="embed-responsive">
         </figure>
       </li>
       <li class="list-item">
         <figure class="list-item-figure">
-          <img src="http://localhost:8000/wp-content/uploads/2020/05/USJ-LogoBranco.png" alt="" srcset="" class="embed-responsive">
+          <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/USJ-LogoBranco.png" alt="" srcset="" class="embed-responsive">
         </figure>
       </li>
       <li class="list-item">
         <figure class="list-item-figure">
-          <img src="http://localhost:8000/wp-content/uploads/2020/05/USJ-LogoBranco.png" alt="" srcset="" class="embed-responsive">
+          <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/USJ-LogoBranco.png" alt="" srcset="" class="embed-responsive">
         </figure>
       </li>
     </ul>

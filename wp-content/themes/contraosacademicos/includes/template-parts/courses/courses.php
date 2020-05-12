@@ -17,37 +17,37 @@
       <ul class="list-items-with-excerpt">
         <li class="list-item">
           <figure class="list-item-figure">
-            <img src="http://localhost:8000/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
             <figcaption class="list-item-figcaption">| Curso de Grego Antigo e Moderno</figcaption>
           </figure>
         </li>
         <li class="list-item active">
           <figure class="list-item-figure">
-            <img src="http://localhost:8000/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
             <figcaption class="list-item-figcaption">| Curso de Grego Antigo e Moderno</figcaption>
           </figure>
         </li>
         <li class="list-item">
           <figure class="list-item-figure">
-            <img src="http://localhost:8000/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
             <figcaption class="list-item-figcaption">| Curso de Grego Antigo e Moderno</figcaption>
           </figure>
         </li>
         <li class="list-item">
           <figure class="list-item-figure">
-            <img src="http://localhost:8000/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
             <figcaption class="list-item-figcaption">| Curso de Grego Antigo e Moderno</figcaption>
           </figure>
         </li>
         <li class="list-item">
           <figure class="list-item-figure">
-            <img src="http://localhost:8000/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
             <figcaption class="list-item-figcaption">| Curso de Grego Antigo e Moderno</figcaption>
           </figure>
         </li>
         <li class="list-item">
           <figure class="list-item-figure">
-            <img src="http://localhost:8000/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
+            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/maya-maceka-yW-Qgw_IJXg-unsplash-scaled.jpg" alt="" srcset="" class="embed-responsive">
             <figcaption class="list-item-figcaption">| Curso de Grego Antigo e Moderno</figcaption>
           </figure>
         </li>

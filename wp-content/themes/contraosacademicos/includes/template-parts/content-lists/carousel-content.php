@@ -3,7 +3,7 @@
     <h2 class="section-title title-center">Biblioteca</h2>
     <p class="section-subtitle title-center">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <ul class="list-items-carousel-content owl-carousel owl-theme">
-      <li class="list-item" style="background-image: url('http://localhost:8000/wp-content/uploads/2020/05/Leibniz_Hannover.jpg')">
+      <li class="list-item" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/Leibniz_Hannover.jpg')">
         <article class="list-item-article">
         <div class="container-title">
           <h2 class="list-item-title">A relação de Kant com o progresso filosófico moderno</h2>
@@ -13,7 +13,7 @@
           </div>
         </article>
       </li>
-      <li class="list-item" style="background-image: url('http://localhost:8000/wp-content/uploads/2020/05/Leibniz_Hannover.jpg')">
+      <li class="list-item" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/Leibniz_Hannover.jpg')">
         <article class="list-item-article">
         <div class="container-title">
           <h2 class="list-item-title">A relação de Kant com o progresso filosófico moderno</h2>
@@ -23,7 +23,7 @@
           </div>
         </article>
       </li>
-      <li class="list-item" style="background-image: url('http://localhost:8000/wp-content/uploads/2020/05/Leibniz_Hannover.jpg')">
+      <li class="list-item" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/Leibniz_Hannover.jpg')">
         <article class="list-item-article">
         <div class="container-title">
           <h2 class="list-item-title">A relação de Kant com o progresso filosófico moderno</h2>
@@ -33,7 +33,7 @@
           </div>
         </article>
       </li>
-      <li class="list-item" style="background-image: url('http://localhost:8000/wp-content/uploads/2020/05/Leibniz_Hannover.jpg')">
+      <li class="list-item" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/Leibniz_Hannover.jpg')">
         <article class="list-item-article">
         <div class="container-title">
           <h2 class="list-item-title">A relação de Kant com o progresso filosófico moderno</h2>
@@ -43,7 +43,7 @@
           </div>
         </article>
       </li>
-      <li class="list-item" style="background-image: url('http://localhost:8000/wp-content/uploads/2020/05/Leibniz_Hannover.jpg')">
+      <li class="list-item" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/Leibniz_Hannover.jpg')">
         <article class="list-item-article">
         <div class="container-title">
           <h2 class="list-item-title">A relação de Kant com o progresso filosófico moderno</h2>
