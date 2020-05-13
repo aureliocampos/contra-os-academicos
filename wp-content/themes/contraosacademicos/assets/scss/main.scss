@@ -1,16 +1,13 @@
 @import 'modules';
 @import 'partials';
+@import 'block-style';
 
 @import 'template/header/header';
 @import 'template/footer/footer';
 @import 'template/banners/banners';
 
+
 // Default Styles - Layouts
-html {
-  font-family: $f-lato;
-  color: $c-black;
-  line-height: 1.4;
-}
 hr {
   width: 60%;
   border-color: $c-white;
@@ -31,7 +28,7 @@ hr {
     margin: 0 auto;
   }
 }
-.section-container.background-black {
+.background-black {
   background-color: $c-black;
   .section-title {
     color: $c-white;
@@ -657,6 +654,35 @@ hr {
         line-height: 1.5;    
         @include notebook {
           max-height: 96px;
+        }
+      }
+    }
+  }
+}
+
+// Estilo só para a página de categorias
+.page-template-page-category {
+  .wp-block-categories.wp-block-categories-list {
+   @include tablet {
+    @include flex($justify-content:flex-start, $align-item:center, $wrap:wrap);
+   }
+    .cat-item {
+      font: 600 1em $f-spectral;
+      color: $c-yellow;
+      text-transform: uppercase;
+      margin-top: 1.5em;
+      @include tablet {
+        width: 30%;
+        font-size: 1.1em;
+        margin-top: 2em;
+        padding: 0 1em;
+      }
+      a {
+        color: $c-white;
+        transition: 400ms;
+        &:hover {
+          color: $c-yellow;
+          text-decoration: underline;
         }
       }
     }

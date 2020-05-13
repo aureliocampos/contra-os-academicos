@@ -10,7 +10,10 @@
 
     //Ativa o thumbnails em TODOS os Post Types
     add_theme_support( 'post-thumbnails');
-
+    
+    // Style Block Editor
+    add_theme_support( 'wp-block-styles' );
+    add_theme_support( 'align-wide' );
 
     // Menus COA
     if ( ! function_exists( 'coa_register_nav_menu' ) ) {
