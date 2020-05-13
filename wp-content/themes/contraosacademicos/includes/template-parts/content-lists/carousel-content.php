@@ -1,7 +1,7 @@
-<section class="section-container section-container-black">
+<section class="section-container background-black container-polygon-top">
   <div class="section-content">
-    <h2 class="section-title title-center">Biblioteca</h2>
-    <p class="section-subtitle title-center">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <h2 class="section-title text-center">Biblioteca</h2>
+    <p class="section-subtitle text-center">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <ul class="list-items-carousel-content owl-carousel owl-theme">
       <li class="list-item" style="background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/Leibniz_Hannover.jpg')">
         <article class="list-item-article">

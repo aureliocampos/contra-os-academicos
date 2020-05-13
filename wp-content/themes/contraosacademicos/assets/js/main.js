@@ -5,22 +5,24 @@ $('.coa-header-menu').click(function () {
 });
 
 // Carousel's
-function carouselSimple(element) {
+function carouselSimple(element, items0, items600, items1000, items1600) {
     $(element).owlCarousel({
-        center:true,
         loop: true,
-        margin: 0,
+        margin: 15,
         nav: false,
         dots: true,
         responsive: {
             0: {
-                items: 1
+                items: items0
             },
             600: {
-                items: 1
+                items: items600
             },
             1000: {
-                items: 5
+                items: items1000
+            },
+            1600: {
+                items: items1600
             }
         }
     });
@@ -46,14 +48,12 @@ function carouselCenter(element) {
             1000: {
                 items: 3
             },
-            1400: {
+            1600: {
                 items: 5
             }
         }
     });
-    $(document).on('click', '.owl-item>li', function() {
-      $owl.trigger('to.owl.carousel', $(this).data( 'position' ));
-    });
+    clickItemCarousel($owl);
 }
 function carouselForId(index) {
     $(index).find('section').each(function () {
@@ -62,5 +62,12 @@ function carouselForId(index) {
         carouselSimple(html);
     });
 }
+function clickItemCarousel(element) {
+    $(document).on('click', '.owl-item>li', function() {
+        element.trigger('to.owl.carousel', $(this).data( 'position' ));
+    });
+}
+
 carouselForId('.carousel');
 carouselCenter('.list-items-carousel-content');
+carouselSimple('.list-items-lit-content', 1, 3, 5, 7);

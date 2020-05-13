@@ -13,7 +13,7 @@
      * Taxonomias, custom post types, widgtes e etc.
      */
 
-    // include_once (get_template_directory (). '/theme-assets/theme-supports/custom-post-types.php');
+     include_once (get_template_directory (). '/theme-assets/theme-supports/custom-post-types.php');
     // include_once (get_template_directory (). '/theme-support/custom-taxonomy.php');
     include_once (get_template_directory (). '/theme-assets/theme-supports/theme-supports.php');
     // include_once (get_template_directory (). '/theme-assets/theme-supports/widgets.php');
@@ -45,6 +45,6 @@
 
     // Adiciona exerpt ao post_type page
     add_post_type_support( 'page', 'excerpt' );
-
+    
     //Desativando o Editor de Temas
     define('DISALLOW_FILE_EDIT', false);

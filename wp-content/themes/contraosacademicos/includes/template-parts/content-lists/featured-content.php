@@ -1,7 +1,7 @@
 <section class="section-container">
   <div class="section-content">
-    <h2 class="section-title title-center">Blog</h2>
-    <p class="section-subtitle title-center">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <h2 class="section-title text-center">Blog</h2>
+    <p class="section-subtitle text-center">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <ul class="list-items-featured-content">
       <li class="list-item">
         <article class="list-item-article">

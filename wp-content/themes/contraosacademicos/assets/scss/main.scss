@@ -5,7 +5,7 @@
 @import 'template/footer/footer';
 @import 'template/banners/banners';
 
-// Default Styles
+// Default Styles - Layouts
 html {
   font-family: $f-lato;
   color: $c-black;
@@ -31,27 +31,53 @@ hr {
     margin: 0 auto;
   }
 }
-.section-container.section-container-black {
+.section-container.background-black {
   background-color: $c-black;
-  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
-  padding-top: 7em;
-  @include notebook {
-    clip-path: polygon(0 15%,100% 0,100% 100%,0 100%);
-    padding-top: 14em;
-  }
   .section-title {
     color: $c-white;
   }
   .section-subtitle {
     color: $c-white;
   }
+  .paragraph {
+    color: $c-white;
+  }
+  .text-featured {
+    color: $c-yellow;
+  }
+}
+.section-container.container-polygon-top {
+  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+  padding-top: 7em;
+  @include notebook {
+    clip-path: polygon(0 15%,100% 0,100% 100%,0 100%);
+    padding-top: 14em;
+  }
+}
+.section-container.container-polygon-top-left {
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
+  padding-top: 7em;
+  @include notebook {
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
+    padding-top: 14em;
+  }
 }
 .section-container.section-newsletter {
   background-color: $c-black-dark;
 }
+.container-polygon-bottom-right {
+  clip-path: polygon(0% 0%,100% 0,100% 100%,0 93%);
+  padding-bottom: 4em;
+  @include notebook {
+    clip-path: polygon(0% 0%,100% 0,100% 100%,0 83%);
+    padding-bottom: 11em;
+  }
+}
+
+// Text and Titles
 .section-title {
   position: relative;
-  font: 600 2.5em $f-spectral;
+  font: 600 1.6em $f-spectral;
   text-transform: uppercase;
   padding-left: 0.5em;
   &:before {
@@ -64,17 +90,22 @@ hr {
     left: 0;
     background: $c-yellow;
   }
+  @include notebook {
+    font-size: 2.3em;
+  }
 }
 .section-subtitle {
-  font: 400 1.3em/1.4 $f-lato;
+  font: 400 1.15em/1.4 $f-lato;
   margin: 1em 0 1.5em 0;
   @include tablet {
     width: 60%;
   }
+  @include notebook {
+    font-size: 1.2em;
+  }
 }
-.section-title.title-center {
+.section-title.text-center {
   position: relative;
-  padding-left: 0.5em;
   text-align: center;
   margin: 0 auto;
   &:before {
@@ -86,12 +117,12 @@ hr {
     top: auto;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: -5px;
     margin: 0 auto;
     background: $c-yellow;
   }
 }
-.section-subtitle.title-center  {
+.section-subtitle.text-center  {
   text-align: center;
   margin: 1em auto 1.5em auto;
 
@@ -107,8 +138,13 @@ hr {
   }
 }
 .paragraph {
+  font: 1em $f-lato;
+  color: $c-black;
   margin-top: 0.8em;
 }
+
+
+//newsletter
 .news-title {
   font: 600 1.5em $f-lato;
   color: $c-white;
@@ -244,7 +280,6 @@ hr {
     }
   }
 }
-
 // List/Featured Content Styles
 .list-items-with-excerpt {
   @include notebook {
@@ -391,6 +426,96 @@ hr {
     }
   }
 }
+.list-items-editor {
+  @include notebook {
+    @include flex($justify-content:space-between, $align-item:center);
+  }
+  .list-item {
+    text-align: center;
+    @include smartphone {
+      &:first-of-type {
+        margin: 2.5em 0;
+      }
+      &:nth-of-type(2) {
+        border-top: 1.5pt solid $c-light-gray;
+        border-bottom: 1.5pt solid $c-light-gray;
+        margin-top: 0;
+        padding: 2.5em 0;
+      }
+      &:last-of-type {
+        margin-top: 2.5em;
+      }
+    }
+    @include notebook {
+      width: 30%;
+      margin: 1.5em 0 0 0;
+      &:nth-of-type(2) {
+        border: none;
+        border-left: 1.5pt solid $c-light-gray;
+        border-right: 1.5pt solid $c-light-gray;
+        padding: 0 2em;
+      }
+    }
+    .circle {
+      @include flex($justify-content:center, $align-item:center);
+      span {
+        @include flex($justify-content:center, $align-item:center);
+        width: 50px;
+        height: 50px;
+        font: 600 1.5em $f-lato;
+        color: $c-yellow;
+        background-color: $c-black;
+        border-radius: 100%;
+      }
+    }
+    .list-item-title {
+      font: 800 1.2em $f-lato;
+      text-transform: uppercase; 
+      margin-top: 0.7em;
+    }
+    .list-item-text {
+      margin-top: 0.5em;
+    }
+  }
+}
+.list-items-editor-terms {
+  @include notebook {
+    @include flex($justify-content:space-between, $wrap: wrap);
+    margin: 0 auto;
+    padding: 0 5em;
+  }
+  .list-item {
+    @include flex($justify-content:space-between, $align-item:center);
+    margin-top: 3em;
+    text-align: right;
+    &:nth-of-type(2n) {
+      flex-direction: row-reverse;
+      text-align: left;
+    }
+    @include notebook {
+      width: 30%;
+      margin: 3em 3em 0 3em;
+    }
+    .list-items-article {
+      width: 75%;
+      .list-item-text {
+        font: 400 1.1em $f-lato;
+        color: $c-white;
+      }
+    }
+    .circle {
+      @include flex($justify-content:center, $align-item:center);
+      width: 60px;
+      height: 60px;
+      border: 2pt solid $c-red;
+      border-radius: 100%;
+      .number {
+        font: 900 2em $f-lato;
+        color: $c-red;
+      }
+    }
+  }
+}
 
 // Carousel Content Styles
 .list-items-carousel-content {
@@ -450,6 +575,12 @@ hr {
     font-size: 90%;
   }
 }
+.owl-theme .owl-nav.disabled+.owl-dots {
+  margin-top: 2em;
+  @include notebook {
+    margin-top: 3em;
+  }
+}
 .owl-theme .owl-dots .owl-dot.active span{
   background: $c-red;
   outline: none;
@@ -460,55 +591,74 @@ hr {
   }
 }
 
-.editor-list-items {
-  @include notebook {
-    @include flex($justify-content:space-between, $align-item:center);
-  }
-  .list-item {
-    text-align: center;
-    @include smartphone {
-      &:first-of-type {
-        margin: 2.5em 0;
-      }
-      &:nth-of-type(2) {
-        border-top: 1.5pt solid $c-light-gray;
-        border-bottom: 1.5pt solid $c-light-gray;
-        margin-top: 0;
-        padding: 2.5em 0;
-      }
-      &:last-of-type {
-        margin-top: 2.5em;
-      }
-    }
+// Sections Exclusive page projetos
+.section-editor-terms {
+  .section-subtitle {
     @include notebook {
-      width: 30%;
-      margin: 1.5em 0 0 0;
-      &:nth-of-type(2) {
-        border: none;
-        border-left: 1.5pt solid $c-light-gray;
-        border-right: 1.5pt solid $c-light-gray;
-        padding: 0 2em;
+      text-align: center;
+      margin: 1em auto 1.5em auto;
+    }
+  }
+}
+.final-terms {
+  margin-top: 3em;
+  .paragraph {
+    font: 600 0.9em $f-lato;
+    color: $c-yellow;
+    text-align: center;
+  }
+}
+
+.section-send-work {
+  .flex-column {
+    @include notebook {
+      @include flex($justify-content:space-around);
+    }
+    .column {
+      @include notebook {
+        width: 40%;
+      }
+      .paragraph {
+        font-size: 0.9em;
+        line-height: 1.5;
       }
     }
-    .circle {
-      @include flex($justify-content:center, $align-item:center);
-      span {
-        @include flex($justify-content:center, $align-item:center);
-        width: 50px;
-        height: 50px;
-        font: 600 1.5em $f-lato;
+  }
+}
+
+.list-items-lit-content {
+  .list-item {
+    border: 1pt solid $c-light-gray;
+    .list-item-figure {
+      height: 250px;
+      width: 100%;
+      overflow: hidden;
+      @include desktop {
+        height: 300px;
+      }
+    }
+    .list-item-article {
+      background-color: $c-black;
+      border-top: 1pt solid $c-light-gray;
+      padding: 1.5em 1em;
+      .list-item-title{
+        font: 500 1.2em $f-spectral;
         color: $c-yellow;
-        background-color: $c-black;
-        border-radius: 100%;
       }
-    }
-    .list-item-title {
-      font: 800 1.2em $f-lato;
-      text-transform: uppercase; 
-      margin-top: 0.7em;
-    }
-    .list-item-text {
-      margin-top: 0.5em;
+      .list-item-text{
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        height: 63px; 
+        font: 400 0.9em $f-lato;
+        color: $c-white;
+        margin-top: 1em;
+        line-height: 1.5;    
+        @include notebook {
+          max-height: 96px;
+        }
+      }
     }
   }
 }
