@@ -20,11 +20,33 @@
   function coa_acf_blocks_init() {
       if( function_exists('acf_register_block_type') ) {
 
-          acf_register_block_type(array(
+        acf_register_block_type(array(
             'name'              => 'banners-select',
-            'title'             => __('Banner Select'),
+            'title'             => __('Banner Seleção'),
             'description'       => __('Um bloco de banner personalizado.'),
             'render_template'   => 'includes/template-parts/banners/banners.php',
+            'category'          => 'coa-custom-blocks',
+            'mode'              => 'edit',
+            'align'             => 'wide',
+            'icon'              => 'admin-appearance',
+            'keywords'          => array(),
+        ));
+        acf_register_block_type(array(
+            'name'              => 'content-blocks',
+            'title'             => __('Blocos de Contéudo'),
+            'description'       => __('Tipos de Bloco de Conteúdo Simples personalizado.'),
+            'render_template'   => 'includes/template-parts/content-blocks/content-blocks.php',
+            'category'          => 'coa-custom-blocks',
+            'mode'              => 'edit',
+            'align'             => 'wide',
+            'icon'              => 'admin-appearance',
+            'keywords'          => array(),
+        ));
+        acf_register_block_type(array(
+            'name'              => 'content-gallery',
+            'title'             => __('Galeria de Conteúdo'),
+            'description'       => __('Galeria de Conteúdo personalizado.'),
+            'render_template'   => 'includes/template-parts/content-gallery/content-gallery.php',
             'category'          => 'coa-custom-blocks',
             'mode'              => 'edit',
             'align'             => 'wide',

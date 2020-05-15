@@ -128,10 +128,7 @@ hr {
   font: 400 1em/1.4 $f-lato;
   margin-top: 0.7em;
   @include tablet-landscape {
-    width: 70%;
-  }
-  @include notebook {
-    width: 60%;
+    width: 80%;
   }
 }
 .paragraph {
@@ -139,7 +136,6 @@ hr {
   color: $c-black;
   margin-top: 0.8em;
 }
-
 
 //newsletter
 .news-title {
@@ -172,28 +168,27 @@ hr {
 
 // Section Content Styles
 .block-content.content-column-count {
+  font: 400 1em $f-lato;
   margin-bottom: 2em;
   @include tablet {
     column-count: 3;
     column-gap: 3em;
     max-height: 500px;
     overflow: hidden;
-    .text-content {
-      width: 100%;
+    p {
       margin: 1em 0;
     }
-    hr {
-      width:90%;
-      border-color: $c-red;
-      margin-block-start: 1.5em;
-      margin-block-end: 1.5em;
-    }
-    .blockquote-content {
-      font: 600 0.9em $f-lato;
-      font-style: italic;
-      color: $c-red;
-      line-height: 1.5;
-    }
+  }
+  hr {
+    width:90%;
+    border-color: $c-red;
+    margin-block-start: 1.5em;
+    margin-block-end: 1.5em;
+  }
+  blockquote,q {
+    font: 600 0.9em $f-lato;
+    font-style: italic;
+    color: $c-red;
   }
   .figure {
     margin: 2em 0;
@@ -208,7 +203,7 @@ hr {
 }
 .section-content-a > .block-content {
   @include tablet {
-    @include flex($justify-content:center, $align-item:center);
+    @include flex($justify-content:flex-start, $align-item:center);
   }
   .figure {
     position: relative;
@@ -247,19 +242,19 @@ hr {
 }
 
 // .list-items-with-excerpt style Desktop
-.flex-column.section-coursers {
+.flex-column.section-content-gallery {
   @include notebook {
     @include flex($justify-content:center, $align-item:flex-start);
     margin-top: 2.5em;
-    height: 650px;
     .list-content-information {
       width: 40%;
-      height: 100%;
+      height: 604px;
       background: $c-black;
       margin-top: 1px;
       .list-content-article {
-        padding: 2em;
+        height: 90%;
         color: $c-white;
+        padding: 2em; 
         .list-content-title {
           font: 600 1.6em $f-spectral;
           color: $c-yellow;
@@ -288,10 +283,10 @@ hr {
     margin-top: 2.5em;
     cursor: pointer;
     @include notebook {
+      width: 49%;
+      height: 200px;
       margin-top: 0;
       border: 1px solid $c-white;
-      width: 49%;
-      height: auto;
       filter: grayscale(1);
       @include transition(500ms);
       &:hover {
@@ -314,6 +309,7 @@ hr {
     }
   }
 }
+
 .list-items-images {
   @include flex($justify-content:center, $wrap:wrap);
   .list-item {
