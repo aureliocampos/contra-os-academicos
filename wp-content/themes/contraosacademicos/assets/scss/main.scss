@@ -251,16 +251,22 @@ hr {
       height: 604px;
       background: $c-black;
       margin-top: 1px;
+      transition: 500ms;
       .list-content-article {
         height: 90%;
-        color: $c-white;
         padding: 2em; 
         .list-content-title {
           font: 600 1.6em $f-spectral;
           color: $c-yellow;
+          text-transform: uppercase;
         }
         .coa-section-btn-container {
           font-size: 80%;
+        }
+        .paragraph {
+          font-size: 1.1em;
+          color: $c-white;
+          line-height: 1.5;
         }
       }
     }

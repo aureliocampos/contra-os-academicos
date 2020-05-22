@@ -15,10 +15,8 @@
 	height: 100vh;
 }
 .coa-banner.banner-secondary {
+	min-height: 50vh;
 	height: 50vh;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
 	@include notebook {
     height: 85vh;
   }
@@ -28,7 +26,11 @@
 		border-radius: 5px;
 	}
 }
-
+.coa-banner-image {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
 .coa-banner-title {
 	font: 400 2.5em $f-spectral;
   color: $c-yellow;

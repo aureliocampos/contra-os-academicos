@@ -10,33 +10,32 @@
       <?php endif; ?>
 
       <div class="flex-column section-content-gallery">
-        <div class="list-content-information">
-          <article class="list-content-article">
-            <h2 class="list-content-title">Curso de Grego Antigo e Moderno</h2>
-            <p class="paragraph">Olá, caro leitor.</p>
-            <p class="paragraph">Apresentamos aqui nossas Aulas de Grego Antigo e Moderno, onde nosso professor Lucas Emmanuel – Autor do artigo Processo e História e do Curso de Historiologia  irá lhes ensinar -s em trocadilhos – a falar grego.</p>
-            <p class="paragraph">Esse tipo de conhecimento é indispensável aos interessados nos filósofos gregos como Platão, Aristóteles, Plotino, etc.</p>
-            <div class="coa-section-btn-container">
-              <a href="" class="coa-section-btn yellow">saiba mais</a>
-            </div>
-          </article>
-      </div>
-
+        <div class="list-content-information"></div>
       <ul class="list-items-with-excerpt">  
         <?php if(get_field('acf_select_posts') == 'select-custom' ): // Verificar a seleção do usuário ?>
             <?php 
               $selectCustom = get_field('acf_select_custom');
 
               if( $selectCustom ): ?>
+
+               <?php global $post; // permite usar os metodos globais, para retornar o id correto de cada post com the_id(); ?>
+
                 <?php foreach( $selectCustom as $post):  ?>
                   <?php setup_postdata($post); ?>
-                  <li class="list-item">
+
+                  <?php //retorna o nome do post type no frontend para a API.
+                    $postType = get_post_type_object(get_post_type());
+                    $type = $postType->rewrite['slug'];
+                  ?>
+
+                  <li id="<?php the_ID($post->ID);?>" class="list-item" data-type="<?php echo $type; ?>">
                     <figure class="list-item-figure">
                       <?php $alt = get_post_meta ( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true ); ?>
                       <?php echo get_the_post_thumbnail( $post->ID, array('400', '200'), array( "class" => "embed-responsive" ), array( 'alt' => $alt )); ?>
-                      <figcaption class="list-item-figcaption">| <?php echo get_the_title( $post->ID ); ?></figcaption>
+                      <figcaption class="list-item-figcaption">| <?php echo get_the_title( $post->ID ); ?> /figcaption>
                     </figure>
                   </li>   
+
                 <?php endforeach; ?>
               <?php wp_reset_postdata();?>
             <?php endif; ?>
@@ -44,7 +43,6 @@
         <?php else: ?>
           
           <?php 
-          
             $selectValue = get_field( 'acf_select_recent' );
     
             if($selectValue == 'select-resources'){
@@ -57,13 +55,13 @@
           
             $args = array(
                 'post_type' => $postType,
-                'posts_per_page' => 4
+                'posts_per_page' => 6
             );
 
             $mostRecents = new WP_Query( $args );
 
             if( $mostRecents->have_posts() ) : while ( $mostRecents->have_posts() ) : $mostRecents->the_post(); ?>
-              <li class="list-item">
+              <li id="<?php the_ID(); ?>" class="list-item">
                 <figure class="list-item-figure">
                   <?php $alt = get_post_meta ( get_post_thumbnail_id( $mostRecents->ID ), '_wp_attachment_image_alt', true ); ?>
                   <?php echo get_the_post_thumbnail( $mostRecents->ID, array('400', '200'), array( "class" => "embed-responsive" ), array( 'alt' => $alt )); ?>

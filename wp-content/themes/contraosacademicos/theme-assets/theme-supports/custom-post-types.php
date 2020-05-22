@@ -109,7 +109,7 @@
             'menu_position'       => 5,
             'can_export'          => true,
             'has_archive'         => false,
-            'exclude_from_search' => false,
+            'exclude_from_search' => true,
             'publicly_queryable'  => true,
         ));
         register_post_type( 'anuncios', array(

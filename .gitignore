@@ -5,7 +5,11 @@ wp-content/plugins/
 wp-content/languages/
 wp-content/upgrade/
 wp-content/uploads/
-wp-content/themes/twentynineteen
+wp-content/themes/twentytwenty/
+
+backup-db
+homolog-config
+
 
 # Files
 .htaccess
