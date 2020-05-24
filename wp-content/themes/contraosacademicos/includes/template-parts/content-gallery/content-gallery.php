@@ -61,7 +61,11 @@
             $mostRecents = new WP_Query( $args );
 
             if( $mostRecents->have_posts() ) : while ( $mostRecents->have_posts() ) : $mostRecents->the_post(); ?>
-              <li id="<?php the_ID(); ?>" class="list-item">
+             <?php //retorna o nome do post type no frontend para a API.
+                    $postType = get_post_type_object(get_post_type());
+                    $type = $postType->rewrite['slug'];
+                  ?>
+              <li id="<?php the_ID(); ?>" class="list-item" data-type="<?php echo $type; ?>">
                 <figure class="list-item-figure">
                   <?php $alt = get_post_meta ( get_post_thumbnail_id( $mostRecents->ID ), '_wp_attachment_image_alt', true ); ?>
                   <?php echo get_the_post_thumbnail( $mostRecents->ID, array('400', '200'), array( "class" => "embed-responsive" ), array( 'alt' => $alt )); ?>
