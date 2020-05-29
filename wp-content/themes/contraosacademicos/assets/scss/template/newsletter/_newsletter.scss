@@ -1,0 +1,28 @@
+//newsletter
+.news-title {
+  font: 600 1.5em $f-lato;
+  color: $c-white;
+  text-align: center;
+}
+.news-subtitle {
+  font: 600 1.1em $f-lato;
+  color: $c-white;
+  text-align: center;
+  margin-top: 1em;
+}
+.news-optin {
+  font: 300 0.9em $f-lato;
+  color: $c-white;
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 2em;
+  strong {
+    color: $c-yellow;
+    font-weight: 600;
+  }
+  a {
+    color: $c-yellow;
+    font-weight: 400;
+    text-decoration: underline;
+  }
+}

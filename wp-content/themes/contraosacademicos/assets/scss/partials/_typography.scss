@@ -2,3 +2,69 @@
 
 $f-lato : 'Lato', sans-serif;
 $f-spectral: 'Spectral', serif;
+
+// Text and Titles
+.section-title {
+  position: relative;
+  font: 600 1.6em $f-spectral;
+  text-transform: uppercase;
+  padding-left: 0.5em;
+  &:before {
+    content: '';
+    display: block;
+    height: 55px;
+    width: 5px;
+    position: absolute;
+    top: -1px;
+    left: 0;
+    background: $c-yellow;
+  }
+  @include notebook {
+    font-size: 2.3em;
+  }
+}
+.section-subtitle {
+  font: 400 1.15em/1.4 $f-lato;
+  margin: 1em 0 1.5em 0;
+  @include tablet {
+    width: 60%;
+  }
+  @include notebook {
+    font-size: 1.2em;
+  }
+}
+.section-title.text-center {
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  &:before {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 55px;
+    position: absolute;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    margin: 0 auto;
+    background: $c-yellow;
+  }
+}
+.section-subtitle.text-center  {
+  text-align: center;
+  margin: 1em auto 1.5em auto;
+
+}
+.text-content {
+  font: 400 1em/1.4 $f-lato;
+  margin-top: 0.7em;
+  @include tablet-landscape {
+    width: 80%;
+  }
+}
+.paragraph {
+  font: 1em $f-lato;
+  color: $c-black;
+  margin-top: 0.8em;
+}

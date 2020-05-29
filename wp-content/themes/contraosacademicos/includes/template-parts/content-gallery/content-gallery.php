@@ -32,7 +32,7 @@
                     <figure class="list-item-figure">
                       <?php $alt = get_post_meta ( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true ); ?>
                       <?php echo get_the_post_thumbnail( $post->ID, array('400', '200'), array( "class" => "embed-responsive" ), array( 'alt' => $alt )); ?>
-                      <figcaption class="list-item-figcaption">| <?php echo get_the_title( $post->ID ); ?> /figcaption>
+                      <figcaption class="list-item-figcaption">| <?php echo get_the_title( $post->ID ); ?> </figcaption>
                     </figure>
                   </li>   
 

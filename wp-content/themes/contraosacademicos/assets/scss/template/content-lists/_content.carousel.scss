@@ -1,0 +1,73 @@
+// Carousel Content Styles
+.list-items-carousel-content {
+  margin: 3em 0;
+  .owl-item.active.center {
+    .list-item {
+      opacity: 1;
+      @include notebook {
+        width: 390px;
+        height: 450px;
+        .container-title {
+          font-size: 130%;
+        }
+      }
+    }
+  }
+  .owl-item {
+    @include flex($justify-content:center, $align-item:center);
+    height: 500px;
+  }
+  .list-item {
+    width: 100%;
+    height: 450px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 1em 0;
+    padding: 1em 0 1.1em 0;
+    border: 1px solid $c-white;
+    opacity: .3;
+    @include transition(400ms);
+    cursor: pointer;
+    @include notebook {
+      width: 312px;
+      height: 360px;
+      &:hover {
+        opacity: .5;
+      }
+    }
+  }
+  .list-item-article {
+    @include flex($flex-direction:column, $justify-content:space-between);
+    height: 100%;
+  }
+  .container-title {
+    background-color: $c-black;
+    text-align: center;
+    opacity: 0.8;
+    padding: 1em;
+    border: 1px solid $c-gray;
+    .list-item-title{
+      font: 600 1.1em $f-lato;
+      color: $c-white;
+    }
+  }
+  .coa-section-btn-container {
+    font-size: 90%;
+  }
+}
+.owl-theme .owl-nav.disabled+.owl-dots {
+  margin-top: 2em;
+  @include notebook {
+    margin-top: 3em;
+  }
+}
+.owl-theme .owl-dots .owl-dot.active span{
+  background: $c-red;
+  outline: none;
+}
+.owl-dot {
+  &:focus {
+    outline: none;
+  }
+}

@@ -53,6 +53,17 @@
             'icon'              => 'admin-appearance',
             'keywords'          => array(),
         ));
+        acf_register_block_type(array(
+            'name'              => 'content-carousel',
+            'title'             => __('Carrrossel de Conteúdo'),
+            'description'       => __('Carrrossel de Conteúdo personalizado.'),
+            'render_template'   => 'includes/template-parts/content-lists/content-carousel.php',
+            'category'          => 'coa-custom-blocks',
+            'mode'              => 'edit',
+            'align'             => 'wide',
+            'icon'              => 'admin-appearance',
+            'keywords'          => array(),
+        ));
       }
   }
   add_action('acf/init', 'coa_acf_blocks_init');
