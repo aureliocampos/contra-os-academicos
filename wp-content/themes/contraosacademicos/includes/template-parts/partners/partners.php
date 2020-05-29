@@ -1,36 +1,33 @@
 <section class="section-container container">
   <div class="section-content">
-    <h2 class="section-title text-center">Parceiros</h2>
-    <p class="section-subtitle text-center">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <ul class="list-items-images">
-      <li class="list-item">
-        <figure class="list-item-figure">
-          <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/USJ-LogoBranco.png" alt="" srcset="" class="embed-responsive">
-        </figure>
-      </li>
-      <li class="list-item">
-        <figure class="list-item-figure">
-          <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/USJ-LogoBranco.png" alt="" srcset="" class="embed-responsive">
-        </figure>
-      </li>
-      <li class="list-item">
-        <figure class="list-item-figure">
-          <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/USJ-LogoBranco.png" alt="" srcset="" class="embed-responsive">
-        </figure>
-      </li>
-      <li class="list-item">
-        <figure class="list-item-figure">
-          <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/USJ-LogoBranco.png" alt="" srcset="" class="embed-responsive">
-        </figure>
-      </li>
-      <li class="list-item">
-        <figure class="list-item-figure">
-          <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/USJ-LogoBranco.png" alt="" srcset="" class="embed-responsive">
-        </figure>
-      </li>
-    </ul>
-    <div class="coa-section-btn-container">
-      <a href="" class="coa-section-btn yellow">Seja um parceiro</a>
-    </div>
+      <?php if (!empty (get_field('acf_section_title'))): // Titulo ?>
+        <h2 class="section-title text-center"><?php echo get_field('acf_section_title'); ?></h2>
+      <?php endif; ?>  
+
+      <?php if (!empty (get_field('acf_section_subtitle'))): // Subtitulo ?>
+        <p class="section-subtitle text-center"><?php echo get_field('acf_section_subtitle'); ?></p>
+      <?php endif; ?>
+    <?php 
+      $images = get_field('acf_image_gallery');
+      if( $images ): ?>
+          <ul class="list-items-images">
+              <?php foreach( $images as $image ): ?>
+                  <li class="list-item">
+                    <figure class="list-item-figure">
+                      <img src="<?php echo esc_url($image['sizes']['medium']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="embed-responsive image">
+                    </figure>
+                  </li>
+              <?php endforeach; ?>
+          </ul>
+      <?php endif; ?>
+      <?php 
+      $sectionCTA = get_field('acf_section_cta');
+      if( !empty($sectionCTA) ): // Condição do cta da seção ?>
+      <div class="coa-section-btn-container">
+        <a href="<?php echo esc_url($sectionCTA['url']); ?>" target="<?php echo esc_attr( $sectionCTA['target'] ? $sectionCTA['target'] : '_self' ); ?>" class="coa-section-btn yellow">
+          <?php echo esc_html($sectionCTA['title']); ?>
+        </a>
+      </div>
+    <?php endif; ?>
   </div>
 </section>

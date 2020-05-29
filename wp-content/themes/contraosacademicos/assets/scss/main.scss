@@ -236,12 +236,6 @@ hr {
     @include tablet {
       width: 15%;
     }
-    @include notebook {
-      width: 10%;
-    }
-    @include desktop {
-      width: 15%;
-    }
   }
   .list-item-figure {
     width: 100%;

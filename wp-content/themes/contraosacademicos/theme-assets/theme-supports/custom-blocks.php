@@ -86,6 +86,17 @@
             'icon'              => 'admin-appearance',
             'keywords'          => array(),
         ));
+        acf_register_block_type(array(
+            'name'              => 'gallery-partners',
+            'title'             => __('Parceiros'),
+            'description'       => __('Parceiros'),
+            'render_template'   => 'includes/template-parts/partners/partners.php',
+            'category'          => 'coa-custom-blocks',
+            'mode'              => 'edit',
+            'align'             => 'wide',
+            'icon'              => 'admin-appearance',
+            'keywords'          => array(),
+        ));
       }
   }
   add_action('acf/init', 'coa_acf_blocks_init');
