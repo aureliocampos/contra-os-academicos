@@ -3,14 +3,14 @@
   $distortion = get_field('acf_background_distortion');
 ?>
 <section class="section-container <?php echo esc_attr($color['value']); ?> <?php echo esc_attr($distortion['value']); ?>"> 
-<div class="section-content">
+  <div class="section-content">
       <?php if (!empty (get_field('acf_section_title'))): // Titulo ?>
-          <h2 class="section-title text-center"><?php echo get_field('acf_section_title'); ?></h2>
-        <?php endif; ?>  
+        <h2 class="section-title text-center"><?php echo get_field('acf_section_title'); ?></h2>
+      <?php endif; ?>  
 
-        <?php if (!empty (get_field('acf_section_subtitle'))): // Subtitulo ?>
-          <p class="section-subtitle text-center"><?php echo get_field('acf_section_subtitle'); ?></p>
-        <?php endif; ?>
+      <?php if (!empty (get_field('acf_section_subtitle'))): // Subtitulo ?>
+        <p class="section-subtitle text-center"><?php echo get_field('acf_section_subtitle'); ?></p>
+      <?php endif; ?>
 
       <ul id="<?php the_field('acf_id_block'); ?>" class="list-items-carousel-content owl-carousel owl-theme">
       
@@ -90,5 +90,5 @@
         </a>
       </div>
     <?php endif; ?>
-    </div>
+  </div>
 </section>

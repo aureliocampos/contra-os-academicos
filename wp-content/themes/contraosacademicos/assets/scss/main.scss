@@ -183,6 +183,10 @@ hr {
     display: none;
     @include notebook {
       display: block;
+      .paragraph {
+        height: 340px;
+        overflow: hidden;
+      }
     }
   }
 }
@@ -249,21 +253,30 @@ hr {
     @include flex($justify-content:space-between, $align-item:center, $wrap:wrap);
   }
   .list-item {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+    // padding: 1em;
     margin-top: 2.5em;
     cursor: pointer;
     @include tablet {
-      width: 30%;
+      width: 33%;
+      height: 350px;
+      margin: 0.5em 0;
     }
     @include notebook {
-      width: 33.3%;
       position: relative;
-      margin: 0;
     }
   }
   .list-item-figure {
     margin: 0 -1em;
     @include tablet {
       margin: 0 auto;
+      overflow: hidden;
+      height: 350px;
+    }
+    img {
+      height: 100%;
     }
   }
   .list-item-article {
@@ -271,7 +284,7 @@ hr {
       @include transition(400ms);
       &:hover {
         .list-item-info {
-          height: 40%;
+          height: 35%;
           background: $c-white;
           opacity: 1;
           z-index: 1;
@@ -285,11 +298,6 @@ hr {
     }
     @include desktop {
       font-size: 100%;
-      &:hover {
-        .list-item-info {
-          height: 30%;
-        }
-      }
     }
   }
   .list-item-info {
@@ -319,13 +327,16 @@ hr {
     }
     .list-item-time {
       font: 600 1em $f-lato;
+      color: $c-black;
     }
     .list-item-title{
       font: 600 1.5em $f-lato;
+      color: $c-black;
       margin-top: 0.8em;
     }
     .list-item-user {
       font: 400 1em $f-lato;
+      color: $c-black;
       margin-top: 0.8em;
       strong {
         font-weight: 600;
@@ -461,14 +472,15 @@ hr {
 
 .list-items-lit-content {
   .list-item {
+    height: auto;
     border: 1pt solid $c-light-gray;
+    @include notebook {
+      height: 405px;
+    }
     .list-item-figure {
-      height: 250px;
+      height: auto;
       width: 100%;
       overflow: hidden;
-      @include desktop {
-        height: 300px;
-      }
     }
     .list-item-article {
       background-color: $c-black;
@@ -480,17 +492,13 @@ hr {
       }
       .list-item-text{
         display: -webkit-box;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
         overflow: hidden;
-        height: 63px; 
         font: 400 0.9em $f-lato;
         color: $c-white;
         margin-top: 1em;
         line-height: 1.5;    
-        @include notebook {
-          max-height: 96px;
-        }
       }
     }
   }

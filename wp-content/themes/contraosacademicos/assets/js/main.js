@@ -1,10 +1,11 @@
 // Carousel's
 function carouselSimple(element, items0, items600, items1000, items1600) {
     $(element).owlCarousel({
-        loop: true,
+        loop: false,
         margin: 15,
-        nav: false,
+        nav: true,
         dots: true,
+        autoHeight:true,
         responsive: {
             0: {
                 items: items0
@@ -21,7 +22,6 @@ function carouselSimple(element, items0, items600, items1000, items1600) {
         }
     });
 }
-
 function carouselForId(index) {
     $(index).find('section').each(function () {
         var id = $(this).attr('id');
@@ -29,12 +29,6 @@ function carouselForId(index) {
         carouselSimple(html);
     });
 }
-function clickItemCarousel(element) {
-    $(document).on('click', '.owl-item>li', function() {
-        element.trigger('to.owl.carousel', $(this).data( 'position' ));
-    });
-}
-
 carouselForId('.carousel');
-carouselSimple('.list-items-lit-content', 1, 3, 5, 7);
+carouselSimple('.list-items-lit-content', 1, 3, 5, 6);
 

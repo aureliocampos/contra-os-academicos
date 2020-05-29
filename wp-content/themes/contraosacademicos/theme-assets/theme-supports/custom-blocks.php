@@ -64,6 +64,28 @@
             'icon'              => 'admin-appearance',
             'keywords'          => array(),
         ));
+        acf_register_block_type(array(
+            'name'              => 'content-carousel-lit-order',
+            'title'             => __('Carrossel Lista de Literatura Ordenada'),
+            'description'       => __('Carrossel Lista de Literatura Ordenada'),
+            'render_template'   => 'includes/template-parts/content-lists/content-carousel-lit-order.php',
+            'category'          => 'coa-custom-blocks',
+            'mode'              => 'edit',
+            'align'             => 'wide',
+            'icon'              => 'admin-appearance',
+            'keywords'          => array(),
+        ));
+        acf_register_block_type(array(
+            'name'              => 'content-featured',
+            'title'             => __('Conteúdo de Destaque'),
+            'description'       => __('Conteúdo de Destaque'),
+            'render_template'   => 'includes/template-parts/content-lists/content-featured.php',
+            'category'          => 'coa-custom-blocks',
+            'mode'              => 'edit',
+            'align'             => 'wide',
+            'icon'              => 'admin-appearance',
+            'keywords'          => array(),
+        ));
       }
   }
   add_action('acf/init', 'coa_acf_blocks_init');
