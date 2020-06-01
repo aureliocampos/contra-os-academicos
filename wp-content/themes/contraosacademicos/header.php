@@ -44,5 +44,7 @@
 					</li>
 				</ul>
 			</div>
+			<div class="search-button"></div>
 	</div>
 </header>
+<!-- <?php get_template_part('includes/template-parts/autocomplete'); ?> -->
