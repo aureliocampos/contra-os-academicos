@@ -1,7 +1,7 @@
 <section class="section-container container-fluid">
   <div class="section-content section-default-page-loop">
     <div class="column-primary">
-      <h2 class="column-title">Biblioteca</h2>
+      <h2 class="column-title">Blog</h2>
      
       <?php 
         // $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -45,21 +45,23 @@
               <?php endwhile;?> 
             <?php wp_reset_postdata();?>
           </ul>
-        <div class="loadmore">Load More...</div>
+        <div class="loadmore"><span>Carregar mais</span></div>
       <?php endif; ?>
      
     </div>
     <div class="column-secondary">
-      <h2 class="column-title">Blog</h2>
+      <h2 class="column-title">Biblioteca</h2>
       <ul class="cards-list-items">
         <?php 
           $args = array(
-            'post_type' => 'post',
-            'posts_per_page' => 5
+            'post_type'           => 'biblioteca',
+            'posts_per_page'      => 5,
+            'orderby'     				=> 'meta_value_num',
+            'meta_key'    				=> 'post_views_count',
+            'order'       	 			=> 'DESC',
           );
 
           $loop_post = new WP_query($args);
-
           if ( $loop_post->have_posts() ) : while ( $loop_post->have_posts() ) : $loop_post->the_post(); ?>
 
             <li class="cards cards-type-a">

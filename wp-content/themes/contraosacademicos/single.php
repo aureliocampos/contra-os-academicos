@@ -1,5 +1,7 @@
 <?php get_header();?>
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    <?php if ( have_posts() ) : ?>
+        <?php while ( have_posts() ) : the_post(); ?>
+        <?php setPostViews(get_the_ID()); ?>
         <section class="coa-banner coa-banner-image banner-secondary" style="background-image: url('<?php echo get_the_post_thumbnail_url('');?>');">
             <div class="coa-banner-container">
                 <h1 class="coa-banner-title"><?php the_title(); ?></h1>
@@ -22,7 +24,8 @@
                 <?php endif; ?>
             </div>
         </div>
-    <?php endwhile; endif; ?>
+    <?php endwhile; ?>
+<?php endif; ?>
 <?php get_footer();?>
 
 
