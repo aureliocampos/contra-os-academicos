@@ -54,3 +54,4 @@
         function add_input_debug_preview() {
             echo '<input type="hidden" name="debug_preview" value="debug_preview">';
     }
+    

@@ -4,6 +4,7 @@
       <h2 class="column-title">Biblioteca</h2>
       <ul class="cards-list-items">
       <?php 
+        // $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $args = array(
           'post_type' => 'post',
           'posts_per_page' => 12
@@ -12,7 +13,6 @@
         $loop_post = new WP_query($args);
 
         if ( $loop_post->have_posts() ) : while ( $loop_post->have_posts() ) : $loop_post->the_post(); ?>
-
           <li class="cards cards-type-a">
             <a href="<?php echo get_the_permalink( $loop_post->ID ); ?>" class="cards-permalink">
               <article class="cards-article">
@@ -36,8 +36,7 @@
               </article>
             </a>
           </li>
-
-          <?php endwhile;?>      
+          <?php endwhile;?> 
         <?php wp_reset_postdata();?>
       <?php endif; ?>
       </ul>
@@ -124,4 +123,3 @@
     </div>
   </div>
 </section>
-

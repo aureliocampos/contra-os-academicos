@@ -31,4 +31,3 @@ function carouselForId(index) {
 }
 carouselForId('.carousel');
 carouselSimple('.list-items-lit-content', 1, 3, 5, 6);
-

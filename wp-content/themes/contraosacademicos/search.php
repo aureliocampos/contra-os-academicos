@@ -2,7 +2,7 @@
 ?>
 <?php get_header(); ?>
 
-<?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>
+<!-- <?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?> -->
 
   <main id="main-content" class="wrap-content" style="margin: 5em 0;">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
