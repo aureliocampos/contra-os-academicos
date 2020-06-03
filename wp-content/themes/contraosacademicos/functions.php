@@ -59,3 +59,9 @@
     
     // Remove issues with prefetching adding extra views
    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+
+
+    // // Style Block Editor
+    // add_theme_support( 'wp-block-styles' );
+    // add_theme_support( 'align-wide' );
+    add_editor_style();
