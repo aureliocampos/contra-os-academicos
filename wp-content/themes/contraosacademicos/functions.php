@@ -57,3 +57,5 @@
             echo '<input type="hidden" name="debug_preview" value="debug_preview">';
     }
     
+    // Remove issues with prefetching adding extra views
+   remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );

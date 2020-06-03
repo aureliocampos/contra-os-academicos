@@ -97,6 +97,17 @@
             'icon'              => 'admin-appearance',
             'keywords'          => array(),
         ));
+        acf_register_block_type(array(
+            'name'              => 'blog-default-content',
+            'title'             => __(' Conteúdo Padrão da Página de Blog'),
+            'description'       => __(' Conteúdo Padrão da Página de Blog'),
+            'render_template'   => 'includes/template-parts/pages/blog-default-content.php',
+            'category'          => 'coa-custom-blocks',
+            'mode'              => 'edit',
+            'align'             => 'wide',
+            'icon'              => 'admin-appearance',
+            'keywords'          => array(),
+        ));
       }
   }
   add_action('acf/init', 'coa_acf_blocks_init');
