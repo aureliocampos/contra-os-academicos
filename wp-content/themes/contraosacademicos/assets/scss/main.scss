@@ -656,3 +656,15 @@ hr {
     text-transform: uppercase;
   }
 }
+
+.post-views {
+  margin: 0.5em;
+  .post-views-label {
+    font: 800 0.9em $f-lato;
+    color: $c-gray;
+  }
+  .post-views-count {
+    font: 800 1em $f-lato;
+    color: $c-gray;
+  }
+}

@@ -64,8 +64,7 @@
           $loop_post = new WP_query($args);
 
           if ( $loop_post->have_posts() ) : while ( $loop_post->have_posts() ) : $loop_post->the_post(); ?>
-            <li class="cards cards-type-a fadeInUp">
-              <?php echo pvc_post_views ($loop_post->ID, $echo = true);?>
+            <li class="cards cards-type-a">
               <a href="<?php echo get_the_permalink( $loop_post->ID ); ?>" class="cards-permalink">
                 <figure class="cards-figure">
                     <?php $alt = get_post_meta ( get_post_thumbnail_id( $loop_post->ID ), '_wp_attachment_image_alt', true ); ?>
@@ -79,10 +78,10 @@
                     <?php endforeach; ?>
                     <time class="cards-date"><?php echo get_the_date( $loop_post->ID ); ?></time>
                   </div>
-                  <h2 class="cards-title"><?php echo get_the_title( $loop_post->ID ); ?></h2>
+                  <h2 class="cards-title"><?php echo get_the_title( $loop_post->ID ); ?></h2>    
                 </article>
-               
               </a>
+              <?php echo pvc_post_views ($loop_post->ID, $echo = true);?>
             </li>
 
             <?php endwhile;?>      
@@ -106,15 +105,12 @@
           if ( $loop_post->have_posts() ) : while ( $loop_post->have_posts() ) : $loop_post->the_post(); ?>
           
             <li class="cards cards-type-a">
-            <?php echo pvc_post_views ($loop_post->ID, $echo = true);?>
               <a href="<?php echo get_the_permalink( $loop_post->ID ); ?>" class="cards-permalink">
-
-              <figure class="cards-figure">
-                    <?php $alt = get_post_meta ( get_post_thumbnail_id( $loop_post->ID ), '_wp_attachment_image_alt', true ); ?>
-                    <?php echo get_the_post_thumbnail( $loop_post->ID, 'medium', array( "class" => "cards-image embed-responsive" ), array( 'alt' => $alt )); ?>
-                  </figure>
+                <figure class="cards-figure">
+                  <?php $alt = get_post_meta ( get_post_thumbnail_id( $loop_post->ID ), '_wp_attachment_image_alt', true ); ?>
+                  <?php echo get_the_post_thumbnail( $loop_post->ID, 'medium', array( "class" => "cards-image embed-responsive" ), array( 'alt' => $alt )); ?>
+                </figure>
                 <article class="cards-article">
-
                   <div class="cards-info">
                     <?php $category_detail=get_the_category($loop_post->ID);?>
                       <?php foreach($category_detail as $cat): ?>
@@ -122,12 +118,10 @@
                     <?php endforeach; ?>
                     <time class="cards-date"><?php echo get_the_date( $loop_post->ID ); ?></time>
                   </div>
-
                   <h2 class="cards-title"><?php echo get_the_title( $loop_post->ID ); ?></h2>
-
                 </article>
-                <?php if(function_exists('the_views')) {the_views();} ?>
               </a>
+              <?php echo pvc_post_views ($loop_post->ID, $echo = true);?>
             </li>
 
             <?php endwhile;?>      
