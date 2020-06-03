@@ -1,0 +1,66 @@
+// Sections Exclusive page projetos
+.section-editor-terms {
+  .section-subtitle {
+    @include notebook {
+      text-align: center;
+      margin: 1em auto 1.5em auto;
+    }
+  }
+}
+.final-terms {
+  margin-top: 3em;
+  .paragraph {
+    font: 600 0.9em $f-lato;
+    color: $c-yellow;
+    text-align: center;
+  }
+}
+.section-send-work {
+  .flex-column {
+    @include notebook {
+      @include flex($justify-content:space-around);
+    }
+    .column {
+      @include notebook {
+        width: 40%;
+      }
+      .paragraph {
+        font-size: 0.9em;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+.list-items-lit-content {
+  .list-item {
+    height: auto;
+    border: 1pt solid $c-light-gray;
+    @include notebook {
+      height: 405px;
+    }
+    .list-item-figure {
+      height: auto;
+      width: 100%;
+      overflow: hidden;
+    }
+    .list-item-article {
+      background-color: $c-black;
+      border-top: 1pt solid $c-light-gray;
+      padding: 1.5em 1em;
+      .list-item-title{
+        font: 500 1.2em $f-spectral;
+        color: $c-yellow;
+      }
+      .list-item-text{
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font: 400 0.9em $f-lato;
+        color: $c-white;
+        margin-top: 1em;
+        line-height: 1.5;    
+      }
+    }
+  }
+}

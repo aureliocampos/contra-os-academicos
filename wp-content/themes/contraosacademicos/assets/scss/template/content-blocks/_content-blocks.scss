@@ -1,0 +1,75 @@
+
+// Section Content Styles
+.block-content.content-column-count {
+  font: 400 1em $f-lato;
+  margin-bottom: 2em;
+  @include tablet {
+    column-count: 3;
+    column-gap: 3em;
+    max-height: 500px;
+    overflow: hidden;
+    p {
+      margin: 1em 0;
+    }
+  }
+  hr {
+    width:90%;
+    border-color: $c-red;
+    margin-block-start: 1.5em;
+    margin-block-end: 1.5em;
+  }
+  blockquote,q {
+    font: 600 0.9em $f-lato;
+    font-style: italic;
+    color: $c-red;
+  }
+  .figure {
+    margin: 2em 0;
+    @include tablet {
+      width: 70%;
+      margin: 1em auto;
+    }
+    &:last-of-type {
+      width: 100%;
+    }
+  }
+}
+.section-content-a > .block-content {
+  @include tablet {
+    @include flex($justify-content:flex-start, $align-item:center);
+  }
+  .figure {
+    position: relative;
+    margin-top: 1em;
+    @include tablet {
+      margin-top: 2em;
+    }
+    @include tablet {
+      &:first-of-type{
+        width: 60%;
+        height: 300px;
+        margin-right: 1em;
+        img {
+          height: 100%;
+        }
+      }
+      &:nth-of-type(2) {
+        width: 40%;
+        height: 300px;
+        img {
+          height: 100%;
+        }
+      }
+    }
+    .cta-image {
+      position: absolute;
+      bottom: 10px;
+      right: 0;
+      font: 600 1em/1.4 $f-lato;
+      color: $c-yellow;
+      text-transform: uppercase;
+      background: $c-black;
+      padding: 1em 1.5em;
+    }
+  }
+}

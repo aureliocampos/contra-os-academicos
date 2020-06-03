@@ -1,0 +1,90 @@
+.list-items-editor {
+  @include notebook {
+    @include flex($justify-content:space-between, $align-item:center);
+  }
+  .list-item {
+    text-align: center;
+    @include smartphone {
+      &:first-of-type {
+        margin: 2.5em 0;
+      }
+      &:nth-of-type(2) {
+        border-top: 1.5pt solid $c-light-gray;
+        border-bottom: 1.5pt solid $c-light-gray;
+        margin-top: 0;
+        padding: 2.5em 0;
+      }
+      &:last-of-type {
+        margin-top: 2.5em;
+      }
+    }
+    @include notebook {
+      width: 30%;
+      margin: 1.5em 0 0 0;
+      &:nth-of-type(2) {
+        border: none;
+        border-left: 1.5pt solid $c-light-gray;
+        border-right: 1.5pt solid $c-light-gray;
+        padding: 0 2em;
+      }
+    }
+    .circle {
+      @include flex($justify-content:center, $align-item:center);
+      span {
+        @include flex($justify-content:center, $align-item:center);
+        width: 50px;
+        height: 50px;
+        font: 600 1.5em $f-lato;
+        color: $c-yellow;
+        background-color: $c-black;
+        border-radius: 100%;
+      }
+    }
+    .list-item-title {
+      font: 800 1.2em $f-lato;
+      text-transform: uppercase; 
+      margin-top: 0.7em;
+    }
+    .list-item-text {
+      margin-top: 0.5em;
+    }
+  }
+}
+.list-items-editor-terms {
+  @include notebook {
+    @include flex($justify-content:space-between, $wrap: wrap);
+    margin: 0 auto;
+    padding: 0 5em;
+  }
+  .list-item {
+    @include flex($justify-content:space-between, $align-item:center);
+    margin-top: 3em;
+    text-align: right;
+    &:nth-of-type(2n) {
+      flex-direction: row-reverse;
+      text-align: left;
+    }
+    @include notebook {
+      width: 30%;
+      margin: 3em 3em 0 3em;
+    }
+    .list-items-article {
+      width: 75%;
+      .list-item-text {
+        font: 400 1.1em $f-lato;
+        color: $c-white;
+      }
+    }
+    .circle {
+      @include flex($justify-content:center, $align-item:center);
+      width: 60px;
+      height: 60px;
+      border: 2pt solid $c-red;
+      border-radius: 100%;
+      .number {
+        font: 900 2em $f-lato;
+        color: $c-red;
+      }
+    }
+  }
+}

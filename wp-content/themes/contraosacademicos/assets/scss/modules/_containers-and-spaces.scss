@@ -1,0 +1,70 @@
+// Default Styles - Layouts
+hr {
+  width: 60%;
+  border-color: $c-white;
+}
+.section-container {
+  padding: 2.5em 1em;
+  @include notebook {
+    padding: 4em 0;
+  }
+}
+.container {
+  @include tablet-landscape {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  @include notebook {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+}
+.container-fluid {
+  @include notebook {
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+}
+.background-black {
+  background-color: $c-black;
+  .section-title {
+    color: $c-white;
+  }
+  .section-subtitle {
+    color: $c-white;
+  }
+  .paragraph {
+    color: $c-white;
+  }
+  .text-featured {
+    color: $c-yellow;
+  }
+}
+.section-container.container-polygon-top-right {
+  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+  padding-top: 7em;
+  @include notebook {
+    clip-path: polygon(0 15%,100% 0,100% 100%,0 100%);
+    padding-top: 14em;
+  }
+}
+.section-container.container-polygon-top-left {
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
+  padding-top: 7em;
+  @include notebook {
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
+    padding-top: 14em;
+  }
+}
+.container-polygon-bottom-right {
+  clip-path: polygon(0% 0%,100% 0,100% 100%,0 93%);
+  padding-bottom: 4em;
+  @include notebook {
+    clip-path: polygon(0% 0%,100% 0,100% 100%,0 83%);
+    padding-bottom: 11em;
+  }
+}
+
+.section-container.section-newsletter {
+  background-color: $c-black-dark;
+}

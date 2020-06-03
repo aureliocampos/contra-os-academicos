@@ -1,0 +1,113 @@
+// Content default blog
+.cards {
+  margin: 2em 0;
+  &:first-of-type {
+    margin-top: 1em;
+  }
+  @include tablet {
+    margin: 1.5em 1em;
+    &:first-of-type {
+      margin-top: 1.5em;
+    }
+  }
+  .cards-info {
+    @include flex($justify-content:space-between, $align-item:center);
+    margin-top: 0.6em;
+  }
+  .cards-figure {
+    width: 100%;
+    height: 200px;
+    .cards-image {
+      height: 100%;
+    }
+  }
+  .cards-title {
+    font: 800 1.1em $f-lato;
+    color: $c-black;
+    margin-top: 0.5em;
+    line-height: 1.5;
+  }
+  .cards-category {
+    font: 800 0.9em $f-lato;
+    color: $c-red;
+  }
+  .cards-date {
+    font: 600 0.9em $f-lato;
+    color: $c-gray;
+  }
+  .cards-user {
+    font: 600 0.9em $f-lato;
+    color: $c-black;
+    margin-top: 0.5em;
+  }
+}
+.column-primary {
+  @include tablet{
+    width: 75%;
+  }
+  .cards-list-items {
+    @include tablet{
+      @include flex($justify-content:center, $align-item:flex-start, $wrap:wrap);
+    }
+    .cards {
+      @include tablet {
+        width: 30%;
+      }
+    }
+  }
+}
+.column-secondary {
+  @include tablet{
+    width: 24%;
+  }
+  .cards {
+    font-size: 80%;
+    margin: 3em 0;
+    @include tablet {
+      margin: 1.8em 1.1em 2em 1.1em;
+      &:after {
+        display: block;
+        content: '';
+        width: 100%;
+        height: 3px;
+        border-bottom: 1px solid $c-light-gray;
+        padding-top: 1.5em;
+      }
+    }
+  }
+  .cards-permalink {
+    display: flex;
+    @include flex($justify-content:flex-start);
+  }
+  .cards-figure {
+    height: 80px;
+    width: 30%;
+    margin-right: 0.5em;
+  }
+  .cards-article {
+    width: 70%;
+  }
+}
+.section-default-page-loop {
+  @include tablet{
+    @include flex($justify-content:space-between, $align-item:flex-start);
+  }
+  .column-title {
+    font: 700 1.5em $f-spectral;
+    margin-top: 2em;
+    text-transform: uppercase;
+    clear: both;
+    @include tablet {
+      margin-left: 0.6em;
+    }
+    &:before {
+      display: block;
+      content: '';
+      width: 3px;
+      height: 35px;
+      background: $c-yellow;
+      float: left;
+      margin-right: 0.3em;
+    }
+  }
+}

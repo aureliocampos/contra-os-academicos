@@ -1,0 +1,96 @@
+.list-items-featured-content {
+  @include tablet {
+    @include flex($justify-content:space-between, $align-item:center, $wrap:wrap);
+  }
+  .list-item {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+    // padding: 1em;
+    margin-top: 2.5em;
+    cursor: pointer;
+    @include tablet {
+      width: 33%;
+      height: 350px;
+      margin: 0.5em 0;
+    }
+    @include notebook {
+      position: relative;
+    }
+  }
+  .list-item-figure {
+    margin: 0 -1em;
+    @include tablet {
+      margin: 0 auto;
+      overflow: hidden;
+      height: 350px;
+    }
+    img {
+      height: 100%;
+    }
+  }
+  .list-item-article {
+    @include notebook {
+      @include transition(400ms);
+      &:hover {
+        .list-item-info {
+          height: 35%;
+          background: $c-white;
+          opacity: 1;
+          z-index: 1;
+          width: auto;
+        }
+        .list-item-figure {
+          filter: brightness(0.5);
+          @include transition(400ms);
+        }
+      }
+    }
+    @include desktop {
+      font-size: 100%;
+    }
+  }
+  .list-item-info {
+    @include notebook {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      height: 5px;
+      font-size: 80%;
+      padding: 1em;
+      opacity: 0;
+      z-index: -1;
+      @include transition(400ms);
+    }
+    @include desktop {
+      font-size: 100%;
+    }
+    .flex {
+      @include flex($justify-content:space-between);
+      margin-top: 0.8em;
+    }
+    .list-item-category {
+      font: 600 1em $f-lato;
+      color: $c-red;
+      text-transform: uppercase;
+    }
+    .list-item-time {
+      font: 600 1em $f-lato;
+      color: $c-black;
+    }
+    .list-item-title{
+      font: 600 1.5em $f-lato;
+      color: $c-black;
+      margin-top: 0.8em;
+    }
+    .list-item-user {
+      font: 400 1em $f-lato;
+      color: $c-black;
+      margin-top: 0.8em;
+      strong {
+        font-weight: 600;
+      }
+    }
+  }
+}

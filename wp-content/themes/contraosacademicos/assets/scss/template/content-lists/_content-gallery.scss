@@ -1,0 +1,78 @@
+// .list-items-with-excerpt style Desktop
+.flex-column.section-content-gallery {
+  @include notebook {
+    @include flex($justify-content:center, $align-item:flex-start);
+    margin-top: 2.5em;
+    .list-content-information {
+      width: 40%;
+      height: 604px;
+      background: $c-black;
+      margin-top: 1px;
+      transition: 500ms;
+      .list-content-article {
+        height: 90%;
+        padding: 2em; 
+        .list-content-title {
+          font: 600 1.6em $f-spectral;
+          color: $c-yellow;
+          text-transform: uppercase;
+        }
+        .coa-section-btn-container {
+          font-size: 80%;
+        }
+        .paragraph {
+          font-size: 1.1em;
+          color: $c-white;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+  .list-content-information {
+    display: none;
+    @include notebook {
+      display: block;
+      .paragraph {
+        height: 340px;
+        overflow: hidden;
+      }
+    }
+  }
+}
+// List/Featured Content Styles
+.list-items-with-excerpt {
+  @include notebook {
+    @include flex($justify-content:flex-start, $align-item:flex-start,$wrap:wrap);
+    width: 60%;
+    height: auto;
+  }
+  .list-item {
+    margin-top: 2.5em;
+    cursor: pointer;
+    @include notebook {
+      width: 49%;
+      height: 200px;
+      margin-top: 0;
+      border: 1px solid $c-white;
+      filter: grayscale(1);
+      @include transition(500ms);
+      &:hover {
+        filter: none;
+      }
+    }
+  }
+  .list-item.active {
+    @include notebook {
+      filter: none;
+    }
+  }
+  .list-item-figure {
+    .list-item-figcaption {
+      font: 600 1.2em $f-lato;
+      margin-top: 0.8em;
+      @include notebook {
+        display: none;
+      }
+    }
+  }
+}

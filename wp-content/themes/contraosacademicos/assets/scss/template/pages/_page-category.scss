@@ -1,0 +1,28 @@
+// Estilo só para a página de categorias
+.page-template-page-category {
+  .wp-block-categories.wp-block-categories-list {
+   @include tablet {
+    @include flex($justify-content:flex-start, $align-item:center, $wrap:wrap);
+   }
+    .cat-item {
+      font: 600 1em $f-spectral;
+      color: $c-yellow;
+      text-transform: uppercase;
+      margin-top: 1.5em;
+      @include tablet {
+        width: 30%;
+        font-size: 1.1em;
+        margin-top: 2em;
+        padding: 0 1em;
+      }
+      a {
+        color: $c-white;
+        transition: 400ms;
+        &:hover {
+          color: $c-yellow;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

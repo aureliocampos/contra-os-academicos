@@ -62,3 +62,16 @@
 .coa-section-btn.yellow {
   @include btnSection($c-yellow, $c-black);
 }
+
+.loadmore {
+  @include flex($justify-content:center);
+  padding: 1em;
+  background: $c-black;
+  cursor: pointer;
+  span {
+    font: 800 1.1em $f-lato;
+    color: $c-yellow;
+    text-transform: uppercase;
+  }
+}
+
