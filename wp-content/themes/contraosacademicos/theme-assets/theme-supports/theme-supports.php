@@ -35,3 +35,41 @@
         }
         add_filter('wp_nav_menu','add_linkclass');
         }
+
+    // Breadcrumps YOAST SEO 
+    add_filter( 'wpseo_breadcrumb_links', 'unbox_yoast_seo_breadcrumb_append_link' );
+        function unbox_yoast_seo_breadcrumb_append_link( $links ) {
+        global $post;
+
+        if( is_singular('post')){ // Function blog
+            $breadcrumb = array(
+                'url' => site_url( '/blog/' ),
+                'text' => 'Blog',
+            );
+        array_unshift($links, $breadcrumb);
+        }
+
+        if( is_singular('biblioteca')){ // Function biblioteca
+            $breadcrumb = array(
+                'url' => site_url( '/biblioteca/' ),
+                'text' => 'Biblioteca',
+            ); 
+        array_unshift($links, $breadcrumb);
+        }
+
+        if( is_singular('cursos')){ // Function Cursos
+            $breadcrumb = array(
+                'url' => site_url( '/cursos/' ),
+                'text' => 'Cursos',
+            ); 
+        array_unshift($links, $breadcrumb);
+        }
+
+        return $links;
+    }
+
+    function get_breadcrumb() {
+        if ( function_exists('yoast_breadcrumb') ) {
+            yoast_breadcrumb('<ol class="breadcrumb-items"><li class="breadcrumb-item">','</li></ol>');
+        }
+    }

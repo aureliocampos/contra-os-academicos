@@ -6,6 +6,7 @@
                 <h1 class="coa-banner-title"><?php the_title(); ?></h1>
             </div>
         </section>
+        <?php get_breadcrumb(); ?>
         <?php the_content(); ?>
     <?php endwhile; ?>
     <?php wp_reset_query (); ?>

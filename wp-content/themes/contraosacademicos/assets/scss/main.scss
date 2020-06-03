@@ -14,6 +14,35 @@
 @import 'template/newsletter/newsletter';
 
 
+
+.breadcrumb-items {
+  @include flex($justify-content:flex-start,$wrap: wrap);
+  margin: 1em;
+  .breadcrumb-item {
+    font: 800 0.9em $f-lato;
+    color: $c-black;
+    margin: 0 0.2rem 0 0;
+    &:after {
+      content: '/';
+      margin-left: 0.2rem;
+    }
+    &:last-of-type {
+      &:after {
+        display: none;
+      }
+    }
+    span a {
+      font: 600 0.95em $f-lato;
+      color: $c-gray;
+      border-bottom: 2pt solid $c-white;
+      &:hover {
+        transition: 400ms;
+        border-bottom: 2pt solid $c-gray;
+      }
+    }
+  }
+}
+
 .single-section-container {
   margin: 1.5em 0;
   @include notebook {
@@ -40,8 +69,15 @@
 
 .single-title {
   font: 800 2.2em $f-lato;
+  color: $c-red;
   margin: 1.1em 0;
-  text-align: center;
+  text-align: left;
+  border-left: 3pt solid $c-black;
+  border-left-style: double;
+  padding-left: 0.2em;
+  @include tablet {
+    font-size: 2.8em;
+  }
 }
 // Text and Titles Block Wordpress
 .block-style{
@@ -97,7 +133,7 @@
 
   // Imagens
   img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     position: relative;
     overflow: hidden;

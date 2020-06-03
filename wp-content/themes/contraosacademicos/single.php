@@ -5,7 +5,8 @@
             </section>
             <section class="single-section-container">
                 <main class="single-section-content"> 
-                    <div class="single-content block-style">
+                    <?php get_breadcrumb(); ?>
+                    <div class="single-content block-style">   
                         <h1 class="single-title"><?php the_title(); ?></h1>
                         <?php the_content(); ?>
                     </div>
