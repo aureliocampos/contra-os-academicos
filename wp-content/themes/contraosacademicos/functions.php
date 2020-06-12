@@ -13,8 +13,8 @@
      * Taxonomias, custom post types, widgtes e etc.
      */
 
-     include_once (get_template_directory (). '/theme-assets/theme-supports/custom-post-types.php');
-    // include_once (get_template_directory (). '/theme-support/custom-taxonomy.php');
+    include_once (get_template_directory (). '/theme-assets/theme-supports/custom-post-types.php');
+    // include_once (get_template_directory (). '/theme-assets/theme-supports/custom-taxonomy.php');
     include_once (get_template_directory (). '/theme-assets/theme-supports/theme-supports.php');
     // include_once (get_template_directory (). '/theme-assets/theme-supports/widgets.php');
     include_once (get_template_directory (). '/theme-assets/theme-supports/custom-blocks.php');
@@ -33,8 +33,8 @@
      */
 
     include_once (get_template_directory (). '/theme-assets/theme-scripts/wp-scripts.php');
-
-    include_once (get_template_directory (). '/theme-assets/theme-ajax/ajax-blog.php');
+     include_once (get_template_directory (). '/theme-assets/theme-ajax/ajax-blog.php');
+     include_once (get_template_directory (). '/theme-assets/theme-ajax/ajax-biblioteca.php');
 
     // Remover auto p
 	remove_filter( 'the_excerpt', 'wpautop' );
@@ -60,8 +60,42 @@
     // Remove issues with prefetching adding extra views
    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 
-
     // Style Block Editor
     add_theme_support( 'wp-block-styles' );
     add_theme_support( 'align-wide' );
-    add_editor_style();
+    add_editor_style( 'style-editor.css' );
+    add_theme_support('editor-styles');
+    add_theme_support( 'responsive-embeds' );
+
+    function disqus_embed($disqus_shortname) {
+		global $post;
+		wp_enqueue_script('disqus_embed','http://'.$disqus_shortname.'.disqus.com/embed.js');
+		echo '<div id="disqus_thread"></div>
+		<script type="text/javascript">
+			var disqus_shortname = "'.$disqus_shortname.'";
+			var disqus_title = "'.$post->post_title.'";
+			var disqus_url = "'.get_permalink($post->ID).'";
+			var disqus_identifier = "'.$disqus_shortname.'-'.$post->ID.'";
+		</script>';
+    }
+
+
+    add_action( 'wp_ajax_load_posts_by_ajax', 'load_posts_by_ajax' );
+    add_action( 'wp_ajax_nopriv_load_posts_by_ajax', 'load_posts_by_ajax' );
+
+    function load_posts_by_ajax() {
+    
+        switch ( filter_input( INPUT_POST, 'action2' ) ) {
+            case 'load_biblioteca_posts':
+                load_biblioteca_by_ajax_callback();
+                break;
+    
+            case 'load_blog_posts':
+                load_posts_by_ajax_callback();
+                break;
+        }
+    
+        wp_die();
+    }
+
+    

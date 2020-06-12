@@ -1,31 +1,30 @@
 <?php
-  function blog_scripts() {
+  function biblioteca_scripts() {
         // Localize the script with new data
-        $script_data_array = array(
+        $script_data_array_2 = array(
             'ajaxurl' => admin_url( 'admin-ajax.php' ),
             'security' => wp_create_nonce( 'load_more_posts' ),
         );
-        wp_localize_script( 'build', 'blog', $script_data_array );
+        wp_localize_script( 'build', 'lista', $script_data_array_2 );
       
     }
-    
-    add_action( 'wp_enqueue_scripts', 'blog_scripts' );
-    add_action('wp_ajax_load_posts_by_ajax', 'load_posts_by_ajax_callback');
-    add_action('wp_ajax_nopriv_load_posts_by_ajax', 'load_posts_by_ajax_callback');
 
-    function load_posts_by_ajax_callback() {
-        check_ajax_referer('load_more_posts', 'security');
-        $paged = $_POST['page'];
-        $args = array(
-            'post_type' => 'post',
-            'post_status' => 'publish',
-            'posts_per_page' => '9',
-            'paged' => $paged,
-        );
+    add_action( 'wp_enqueue_scripts', 'biblioteca_scripts' );
+    add_action('wp_ajax_load_posts_by_ajax', 'load_biblioteca_by_ajax_callback');
+    add_action('wp_ajax_nopriv_load_posts_by_ajax', 'load_biblioteca_by_ajax_callback');
 
-          $loop_post = new WP_query($args); ?>
+    function load_biblioteca_by_ajax_callback() {
+      check_ajax_referer('load_more_posts', 'security');
+      $paged = $_POST['page'];
+      $args = array(
+          'post_type' => 'biblioteca',
+          'post_status' => 'publish',
+          'posts_per_page' => '9',
+          'paged' => $paged,
+      );
 
-          
+       $loop_post = new WP_query($args); ?>
+     
     <?php if ( $loop_post->have_posts() ) : ?>
         <?php while ( $loop_post->have_posts() ) : $loop_post->the_post(); ?>
             <li class="cards cards-type-a">

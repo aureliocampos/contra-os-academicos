@@ -4,6 +4,7 @@
 @import 'template/header/header';
 @import 'template/footer/footer';
 @import 'template/pages/default-pages';
+@import 'template/singles/singles';
 @import 'template/banners/banners';
 @import 'template/content-blocks/content-blocks';
 @import 'template/content-lists/content-carousel';
@@ -14,171 +15,73 @@
 @import 'template/newsletter/newsletter';
 
 
-
-.breadcrumb-items {
-  @include flex($justify-content:flex-start,$wrap: wrap);
-  margin: 1em;
-  .breadcrumb-item {
-    font: 800 0.9em $f-lato;
-    color: $c-black;
-    margin: 0 0.2rem 0 0;
-    &:after {
-      content: '/';
-      margin-left: 0.2rem;
-    }
-    &:last-of-type {
-      &:after {
-        display: none;
-      }
-    }
-    span a {
-      font: 600 0.95em $f-lato;
-      color: $c-gray;
-      border-bottom: 2pt solid $c-white;
-      &:hover {
-        transition: 400ms;
-        border-bottom: 2pt solid $c-gray;
-      }
+.tabs-items {
+  @include flex($justify-content:flex-start, $align-item:center);
+  background-color: $c-black;
+  padding: 0.5em 1em;
+  margin-top: 3em;
+  .tabs-item a{
+    font: 600 1.2em $f-spectral;
+    color: $c-gray;
+    margin-right: 1em;
+  }
+  .tabs-item.ui-state-active a{
+    color: $c-yellow;
+    border-bottom: 2px solid $c-yellow;
+    &:hover {
+      border-bottom: 2px solid $c-yellow;
     }
   }
+  .tabs-item.ui-state-hover a{
+    border-bottom: 2px solid $c-gray;
+  }
+}
+.tab-target {
+  padding:1em;
+  border: 1px solid black;
+  display: none;
 }
 
-.single-section-container {
-  margin: 1.5em 0;
-  @include notebook {
-    @include flex($justify-content:space-between, $align-item:flex-start);
-    margin: 1.5em;
-  }
-  .single-section-content {
-    padding: 0 1em;
-    @include notebook {
-      width: 65%;
-      padding: 0 2em;
-    }
-  }
-}
-
-.single-sidebar-container {
-  padding: 0 1em;
-  background-color: $c-light-gray;
-  height: 600px;
-  @include notebook {
-    width: 25%;
-  }
-}
-
-.single-title {
-  font: 800 2.2em $f-lato;
-  color: $c-red;
-  margin: 1.1em 0;
-  text-align: left;
-  border-left: 3pt solid $c-black;
-  border-left-style: double;
-  padding-left: 0.2em;
-  @include tablet {
-    font-size: 2.8em;
-  }
-}
-// Text and Titles Block Wordpress
-.block-style{
-  font-family: $f-lato;
-  font-size: 1rem;
-  line-height: 1.5 !important;
-  h2,h3,h4,h5,h6 {
-    margin: 1.1em 0;
-  }
-  // Tipografia
-   h2 {
-    font: 800 1.5em $f-lato;
-   }
-   h3 {
-    font: 800 1.17em $f-lato;
-   }
-   h4 {
-    font: 800 1em $f-lato;
-   }
-   h5 {
-    font: 700 1em $f-lato;
-   }
-   h6 {
-    font: 700 1em $f-lato;
-   }
-   p {
-    font: 400 1em $f-lato;
-  }
-  a {
-    color: $c-red;
-    &:focus {
+.sidebar-category-list {
+  padding: 2em 1em;
+  .sidebar-category-item {
+    margin: 0.5em 0;
+    a {
+      font: 700 1.2em $f-lato;
       color: $c-red;
     }
   }
-
-  // Listas ol, li
-  ol {
-    display: block;
-    list-style-type: decimal;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
-    li {
-      margin: 0.3em 0;
-      a {
-        font-weight: 600;
-        text-decoration: underline;
+}
+.sidebar-title {
+  font: 700 1.3em $f-lato;
+  color: $c-black;
+}
+.sidebar-link {
+  font: 700 1em $f-lato;
+  color: $c-gray;
+  text-decoration: underline;
+  margin-top: 0.5em;
+}
+.sidebar-post-relationship {
+  padding:1em;
+  .cards {
+    margin: 1.5em 0em;
+    .cards-permalink {
+      display: flex;
+      .cards-figure{
+        width: 30%;
+        height: auto;
+        margin-right: 0.5em;
+      }
+      .cards-article {
+        width: 70%;
       }
     }
   }
-
-  // Imagens
-  img {
-    max-width: 100%;
-    height: auto;
-    position: relative;
-    overflow: hidden;
-  }
-
-  // Blockquote 
-  blockquote {
-    font: 800 1.17em $f-lato;
-    display: block;
-    padding: 1em;
-    margin: 3em 0;
-    border-top: 2pt solid $c-red;
-    border-bottom: 2pt solid $c-red;
-    position: relative;
-    p {
-      font: 600 1.17em $f-spectral;
-      font-style: italic;
-    }
-    &:after {
-      display: block;
-      content: '"';
-      font-size: 1.8em;
-      color: $c-red;
-      background: $c-white;
-      width: max-content;
-      height: max-content;
-      padding: 0 20px;
-      position: absolute;
-      top: -20px;
-      left: 0;
-      right: 0;
-      
-      margin: 0 auto;
-    }
-  }
-
-  @include tablet {
-    blockquote {
-      max-width: 600px;
-      margin: 5em auto;
-      padding: 2em;
-    }
-  }
-  @include notebook {}
 }
 
-
-  
+.autor-link {
+  font: 700 1em $f-lato;
+  color: $c-black;
+  text-decoration: underline;
+}

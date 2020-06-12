@@ -7,7 +7,7 @@
     <?php if (!empty (get_sub_field('acf_section_subtitle'))): // Subtitulo ?>
       <p class="section-subtitle"><?php echo get_sub_field('acf_section_subtitle'); ?></p>
     <?php endif; ?>
-    <p class="text-content"><?php the_sub_field('acf_text_area'); // Texto Simples  ?></p>
+    <div class="text-content"><?php the_sub_field('acf_text_area'); // Texto Simples  ?></div>
     <div class="flex-column-center block-content">
       <?php 
         $image = get_sub_field('acf_image_one'); // Condição/Loop dá imagem e do link 1

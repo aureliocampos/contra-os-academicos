@@ -5,7 +5,7 @@
      
       <?php 
         $args = array(
-          'post_type' => 'post',
+          'post_type' => 'biblioteca',
           'post_status' => 'publish',
           'posts_per_page' => '9',
           'page' => 1
@@ -15,7 +15,7 @@
 
         if ( $loop_post->have_posts() ) : ?>
 
-          <ul class="cards-list-items load-more">
+          <ul class="cards-list-items load-more-biblioteca">
 
             <?php while ( $loop_post->have_posts() ) : $loop_post->the_post(); ?>
               <li class="cards cards-type-a">
@@ -45,7 +45,7 @@
               <?php endwhile;?> 
             <?php wp_reset_postdata();?>
           </ul>
-        <div class="loadmore"><span>Carregar mais</span></div>
+        <div class="loadmore-biblioteca"><span>Carregar mais</span></div>
       <?php endif; ?>
      
     </div>
@@ -54,7 +54,7 @@
       <ul class="cards-list-items">
         <?php 
           $args = array(
-            'post_type'           => 'post',
+            'post_type'           => 'biblioteca',
             'posts_per_page'      => 5,
             'orderby'     				=> 'post_views',
             'order'       	 			=> 'DESC',
@@ -94,7 +94,7 @@
       <ul class="cards-list-items">
         <?php 
           $args = array(
-            'post_type'           => 'biblioteca',
+            'post_type'           => 'post',
             'posts_per_page'      => 4,
             'orderby'     				=> 'post_views',
             'order'       	 			=> 'DESC',
@@ -134,17 +134,3 @@
     </div>
   </div>
 </section>
-
-
-<!-- todas as categoria do post sem link
-<?php $category_detail=get_the_category($loop_post->ID);?>
-<?php foreach($category_detail as $cat): ?>
-  <h4 class="cards-category">| <?php echo $cat->cat_name; ?></h4>
-<?php endforeach; ?> -->
-
-<!-- Categoria única com link
-<?php 
-  $categories = get_the_category();
-  if ( ! empty( $categories ) ) {
-      echo '<a class="cards-category" href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">| ' . esc_html( $categories[0]->name ) . '</a>';
-  } ?> -->
