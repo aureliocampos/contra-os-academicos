@@ -39,6 +39,34 @@
                                 </li>
                             <?php endwhile; wp_reset_postdata(); ?>
                         </ul>
+                        <div class="entry-content">
+                            <h2>Conteúdo desse Autor(a):</h2>
+                            <?php 
+                            $the_posts_autor = get_posts(array(
+                                'post_type' => 'post',
+                                'meta_query' => array(
+                                    array(
+                                        'key' => 'acf_autor_post', // name of custom field
+                                        'value' => '"' . get_the_ID() . '"', // matches exactly "123", not just 123. This prevents a match for "1234"
+                                        'compare' => 'LIKE'
+                                    )
+                                )
+                            ));
+
+                            ?>
+                            <?php if( $the_posts_autor ): ?>
+                                <ul>
+                                <?php foreach( $the_posts_autor as $post_autor ): ?>
+                                    <li>
+                                        <a href="<?php echo get_permalink( $post_autor->ID ); ?>">
+                                            <?php echo get_the_title( $post_autor->ID ); ?>
+                                        </a>
+                                    </li>
+                                <?php endforeach; ?>
+                                </ul>
+                            <?php endif; ?>
+
+                        </div>
                     </aside>
                 </section>
             </section>
