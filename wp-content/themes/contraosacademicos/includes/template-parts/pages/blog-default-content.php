@@ -7,7 +7,7 @@
         $args = array(
           'post_type' => 'post',
           'post_status' => 'publish',
-          'posts_per_page' => '9',
+          'posts_per_page' => '8',
           'page' => 1
         );
 
@@ -30,9 +30,10 @@
                     <div class="cards-info">
                       <?php 
                         $categories = get_the_category();
-                        if ( ! empty( $categories ) ) {
+                        if ( !empty( $categories ) ) {
                             echo '<h4 class="cards-category">| ' . esc_html( $categories[0]->name ) . '</h4>';
                         } ?>
+
                       <time class="cards-date"><?php echo get_the_date( $loop_post->ID ); ?></time>
                     </div>
 
@@ -74,7 +75,7 @@
                   <div class="cards-info">
                     <?php 
                       $categories = get_the_category();
-                      if ( ! empty( $categories ) ) {
+                      if ( !empty( $categories ) ) {
                           echo '<h4 class="cards-category">| ' . esc_html( $categories[0]->name ) . '</h4>';
                       } ?>
                     <time class="cards-date"><?php echo get_the_date( $loop_post->ID ); ?></time>

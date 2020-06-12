@@ -38,10 +38,11 @@
                     </figure>
 
                     <div class="cards-info">
-                      <?php $category_detail=get_the_category($loop_post->ID);?>
-                        <?php foreach($category_detail as $cat): ?>
-                          <h4 class="cards-category">| <?php echo $cat->cat_name; ?></h4>
-                      <?php endforeach; ?>
+                    <?php 
+                      $categories = get_the_category();
+                      if ( !empty( $categories ) ) {
+                          echo '<h4 class="cards-category">| ' . esc_html( $categories[0]->name ) . '</h4>';
+                      } ?>
                       <time class="cards-date"><?php echo get_the_date( $loop_post->ID ); ?></time>
                     </div>
 
