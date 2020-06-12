@@ -28,6 +28,7 @@
                             <?php 
                                 $args = array(
                                 'post_type' => 'autores',
+                                'post__not_in' => array( $post->ID),
                                 'posts_per_page' => -1,
                                 );
                                 $loop_autors = new WP_Query( $args ); 
