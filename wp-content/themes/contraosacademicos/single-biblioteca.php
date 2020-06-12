@@ -7,7 +7,13 @@
                 <main class="single-section-content"> 
                     <div class="single-section-header">
                         <div class="column"><?php get_breadcrumb(); ?></div>
-                        <div class="column">Autor</div>
+                        <?php 
+                            $autors = get_field('acf_autor_post');
+                            if( $autors ): ?>
+                            <?php foreach( $autors as $aut ): // variable must NOT be called $post (IMPORTANT) ?>
+                               <div class="column">Autor: <a class="autor-link" href="<?php echo get_permalink( $aut->ID ); ?>"><?php echo get_the_title( $aut->ID ); ?></a></div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </div>
                     <div class="single-content block-style">   
                         <h1 class="single-title"><?php the_title(); ?></h1>
@@ -32,13 +38,13 @@
                             <?php endforeach; ?>
                             
                             <a href="http://localhost:8000/categorias" class="sidebar-link">Todas as Categorias ></a>
-                        </ul>
+                        </ul>  
                         
                         <ul class="sidebar-post-relationship cards-list-items">
                         <h3 class="sidebar-title">Posts Relacionados</h3>
                             <?php 
                                 $args = array(
-                                'posts_per_page' => 5,
+                                'posts_per_page' => 8,
                                 'category_name'  => $cat->cat_name,
                                 );
                                 $loop_post = new WP_Query( $args ); 
@@ -66,6 +72,22 @@
                             <?php endwhile; wp_reset_postdata(); ?>
 
                             <a href="http://localhost:8000/biblioteca" class="sidebar-link">Ir para o Biblioteca ></a>
+                        </ul>
+
+                        <ul class="sidebar-autors-list">
+                            <h3 class="sidebar-title">Autores(as)</h3>
+                            <?php 
+                                $args = array(
+                                'post_type' => 'autores',
+                                'posts_per_page' => -1,
+                                );
+                                $loop_autors = new WP_Query( $args ); 
+                            ?>
+                            <?php while ( $loop_autors->have_posts() ) : $loop_autors->the_post(); ?> 
+                                <li class="sidebar-autors-item">
+                                    <a href="<?php echo get_the_permalink( $loop_autors->ID ); ?>"><?php echo get_the_title( $loop_autors->ID ); ?></a>
+                                </li>
+                            <?php endwhile; wp_reset_postdata(); ?>
                         </ul>
                         
                     </aside>

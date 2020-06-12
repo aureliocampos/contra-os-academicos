@@ -41,6 +41,8 @@
         function unbox_yoast_seo_breadcrumb_append_link( $links ) {
         global $post;
 
+        //Trocar ifs por case percorrendo um switch
+
         if( is_singular('post')){ // Function blog
             $breadcrumb = array(
                 'url' => site_url( '/blog/' ),
@@ -65,6 +67,13 @@
         array_unshift($links, $breadcrumb);
         }
 
+        // if( is_singular('autores')){ // Function Cursos
+        //     $breadcrumb = array(
+        //         'url' => site_url( '/autores/' ),
+        //         'text' => 'Autores',
+        //     ); 
+        // array_unshift($links, $breadcrumb);
+        // }
         return $links;
     }
 

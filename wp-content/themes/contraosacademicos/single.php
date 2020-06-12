@@ -74,7 +74,21 @@
 
                             <a href="http://localhost:8000/blog" class="sidebar-link">Ir para o Blog ></a>
                         </ul>
-                        
+                        <ul class="sidebar-autors-list">
+                            <h3 class="sidebar-title">Autores(as)</h3>
+                            <?php 
+                                $args = array(
+                                'post_type' => 'autores',
+                                'posts_per_page' => -1,
+                                );
+                                $loop_autors = new WP_Query( $args ); 
+                            ?>
+                            <?php while ( $loop_autors->have_posts() ) : $loop_autors->the_post(); ?> 
+                                <li class="sidebar-autors-item">
+                                    <a href="<?php echo get_the_permalink( $loop_autors->ID ); ?>"><?php echo get_the_title( $loop_autors->ID ); ?></a>
+                                </li>
+                            <?php endwhile; wp_reset_postdata(); ?>
+                        </ul>
                     </aside>
                 </section>
             </section>
