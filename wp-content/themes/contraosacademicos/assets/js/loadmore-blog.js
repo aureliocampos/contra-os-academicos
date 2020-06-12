@@ -19,6 +19,7 @@ jQuery(function ($) {
 $('body').on('click', '.loadmore', function () {
     var data = {
         action: 'load_posts_by_ajax',
+        action2: 'load_blog_posts',
         page: page,
         security: blog.security,
     };

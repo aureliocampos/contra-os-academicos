@@ -10,8 +10,8 @@
     }
     
     add_action( 'wp_enqueue_scripts', 'blog_scripts' );
-    add_action('wp_ajax_load_posts_by_ajax', 'load_posts_by_ajax_callback');
-    add_action('wp_ajax_nopriv_load_posts_by_ajax', 'load_posts_by_ajax_callback');
+    // add_action('wp_ajax_load_posts_by_ajax', 'load_posts_by_ajax_callback');
+    // add_action('wp_ajax_nopriv_load_posts_by_ajax', 'load_posts_by_ajax_callback');
 
     function load_posts_by_ajax_callback() {
         check_ajax_referer('load_more_posts', 'security');

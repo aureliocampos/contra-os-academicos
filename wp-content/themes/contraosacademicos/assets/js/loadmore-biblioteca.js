@@ -19,6 +19,7 @@ jQuery(function ($) {
 $('body').on('click', '.loadmore-biblioteca', function () {
     var data = {
         action: 'load_posts_by_ajax',
+        action2: 'load_biblioteca_posts',
         page: page,
         security: lista.security,
     };
