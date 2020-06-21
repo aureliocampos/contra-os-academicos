@@ -37,7 +37,7 @@
     height: auto;
     border: 1pt solid $c-light-gray;
     @include notebook {
-      height: 405px;
+      min-height: 350px;
     }
     .list-item-figure {
       height: auto;
@@ -48,6 +48,8 @@
       background-color: $c-black;
       border-top: 1pt solid $c-light-gray;
       padding: 1.5em 1em;
+      max-height: 150px;
+      overflow: hidden;
       .list-item-title{
         font: 500 1.2em $f-spectral;
         color: $c-yellow;

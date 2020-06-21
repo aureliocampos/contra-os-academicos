@@ -5,21 +5,21 @@
     .list-item {
       opacity: 1;
       @include notebook {
-        width: 390px;
-        height: 450px;
-        .container-title {
-          font-size: 130%;
-        }
+        width: 300px;
+        height: 350px;
       }
     }
   }
   .owl-item {
     @include flex($justify-content:center, $align-item:center);
-    height: 500px;
+    height: 420px;
+    @include desktop {
+      height: 470px;
+    }
   }
   .list-item {
     width: 100%;
-    height: 450px;
+    height: 400px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -30,8 +30,8 @@
     @include transition(400ms);
     cursor: pointer;
     @include notebook {
-      width: 312px;
-      height: 360px;
+      width: 240px;
+      height: 280px;
       &:hover {
         opacity: .5;
       }
@@ -57,10 +57,7 @@
   }
 }
 .owl-theme .owl-nav.disabled+.owl-dots {
-  margin-top: 2em;
-  @include notebook {
-    margin-top: 3em;
-  }
+  margin-top: 1em;
 }
 .owl-theme .owl-dots .owl-dot.active span{
   background: $c-red;
@@ -69,5 +66,11 @@
 .owl-dot {
   &:focus {
     outline: none;
+  }
+}
+
+.background-white {
+  .list-item {
+    opacity: 1;
   }
 }

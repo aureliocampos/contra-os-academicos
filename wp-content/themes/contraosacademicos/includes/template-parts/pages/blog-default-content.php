@@ -7,7 +7,7 @@
         $args = array(
           'post_type' => 'post',
           'post_status' => 'publish',
-          'posts_per_page' => '8',
+          'posts_per_page' => '12',
           'page' => 1
         );
 
@@ -79,24 +79,23 @@
                           echo '<h4 class="cards-category">| ' . esc_html( $categories[0]->name ) . '</h4>';
                       } ?>
                     <time class="cards-date"><?php echo get_the_date( $loop_post->ID ); ?></time>
+                    <?php echo pvc_post_views($loop_post->ID, $echo = true);?>
                   </div>
-                  <h2 class="cards-title"><?php echo get_the_title( $loop_post->ID ); ?></h2>    
                 </article>
+                <h2 class="cards-title"><?php echo get_the_title( $loop_post->ID ); ?></h2>    
               </a>
-              <?php echo pvc_post_views($loop_post->ID, $echo = true);?>
             </li>
-
             <?php endwhile;?>      
           <?php wp_reset_postdata();?>
           <?php wp_reset_query (); ?>
         <?php endif; ?>
       </ul>
-      <h2 class="column-title">Cursos</h2>
+      <h2 class="column-title">Biblioteca</h2>
       <ul class="cards-list-items">
         <?php 
           $args = array(
             'post_type'           => 'biblioteca',
-            'posts_per_page'      => 4,
+            'posts_per_page'      => 5,
             'orderby'     				=> 'post_views',
             'order'       	 			=> 'DESC',
             'ignore_sticky_posts' => 1,
@@ -120,11 +119,12 @@
                           echo '<h4 class="cards-category">| ' . esc_html( $categories[0]->name ) . '</h4>';
                       } ?>
                   <time class="cards-date"><?php echo get_the_date( $loop_post->ID ); ?></time>
+                  <?php echo pvc_post_views ($loop_post->ID, $echo = true);?>
                   </div>
-                  <h2 class="cards-title"><?php echo get_the_title( $loop_post->ID ); ?></h2>
+                  
                 </article>
               </a>
-              <?php echo pvc_post_views ($loop_post->ID, $echo = true);?>
+              <h2 class="cards-title"><?php echo get_the_title( $loop_post->ID ); ?></h2>
             </li>
 
             <?php endwhile;?>      

@@ -8,7 +8,7 @@
             array(
                 'slug'  => 'coa-custom-blocks',
                 'title' => __( 'COA blocos Personalizados', 'coa-plugin' ),
-                'icon'  => null,
+                'icon'  => ' wordpress',
             ),
         )
     );
@@ -55,13 +55,13 @@
         ));
         acf_register_block_type(array(
             'name'              => 'content-carousel',
-            'title'             => __('Carrrossel de Conteúdo'),
-            'description'       => __('Carrrossel de Conteúdo personalizado.'),
+            'title'             => __('Carrossel de Conteúdo'),
+            'description'       => __('Carrossel de Conteúdo personalizado.'),
             'render_template'   => 'includes/template-parts/content-lists/content-carousel.php',
             'category'          => 'coa-custom-blocks',
             'mode'              => 'edit',
             'align'             => 'wide',
-            'icon'              => 'admin-appearance',
+            'icon'              => 'slides',
             'keywords'          => array(),
         ));
         acf_register_block_type(array(
@@ -72,7 +72,7 @@
             'category'          => 'coa-custom-blocks',
             'mode'              => 'edit',
             'align'             => 'wide',
-            'icon'              => 'admin-appearance',
+            'icon'              => 'book',
             'keywords'          => array(),
         ));
         acf_register_block_type(array(
@@ -83,7 +83,7 @@
             'category'          => 'coa-custom-blocks',
             'mode'              => 'edit',
             'align'             => 'wide',
-            'icon'              => 'admin-appearance',
+            'icon'              => 'star-filled',
             'keywords'          => array(),
         ));
         acf_register_block_type(array(
@@ -94,7 +94,7 @@
             'category'          => 'coa-custom-blocks',
             'mode'              => 'edit',
             'align'             => 'wide',
-            'icon'              => 'admin-appearance',
+            'icon'              => 'images-alt2',
             'keywords'          => array(),
         ));
         acf_register_block_type(array(
@@ -105,7 +105,7 @@
             'category'          => 'coa-custom-blocks',
             'mode'              => 'edit',
             'align'             => 'wide',
-            'icon'              => 'admin-appearance',
+            'icon'              => 'grid-view',
             'keywords'          => array(),
         ));
         acf_register_block_type(array(
@@ -116,7 +116,18 @@
             'category'          => 'coa-custom-blocks',
             'mode'              => 'edit',
             'align'             => 'wide',
-            'icon'              => 'admin-appearance',
+            'icon'              => 'grid-view',
+            'keywords'          => array(),
+        ));
+        acf_register_block_type(array(
+            'name'              => 'editor-content',
+            'title'             => __('Seja Editor Contra os Acdêmicos'),
+            'description'       => __('Seja Editor Contra os Acdêmicos'),
+            'render_template'   => 'includes/template-parts/content-lists/editor-content.php',
+            'category'          => 'coa-custom-blocks',
+            'mode'              => 'edit',
+            'align'             => 'wide',
+            'icon'              => 'edit-large',
             'keywords'          => array(),
         ));
       }

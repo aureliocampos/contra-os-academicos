@@ -1,7 +1,7 @@
 <?php get_header();?>
     <?php if ( have_posts() ) : ?> 
         <?php while ( have_posts() ) : the_post(); ?>
-            <section class="coa-banner coa-banner-image banner-secondary" style="background-image: url('<?php echo get_the_post_thumbnail_url('');?>');height:70vh;">
+            <section class="coa-banner coa-banner-image banner-secondary" style="background-image: url('<?php echo get_the_post_thumbnail_url('');?>');">
             </section>
             <section class="single-section-container">
                 <main class="single-section-content"> 
@@ -65,9 +65,9 @@
                                             echo '<h4 class="cards-category">| ' . esc_html( $categories[0]->name ) . '</h4>';
                                         } ?>
                                     <time class="cards-date"><?php echo get_the_date( $loop_post->ID ); ?></time>
-                                    </div>
-                                    <h2 class="cards-title"><?php echo get_the_title( $loop_post->ID ); ?></h2>
+                                    </div>  
                                     </article>
+                                    <h2 class="cards-title"><?php echo get_the_title( $loop_post->ID ); ?></h2>
                                 </a>
                                 </li>
                             <?php endwhile; wp_reset_postdata(); ?>

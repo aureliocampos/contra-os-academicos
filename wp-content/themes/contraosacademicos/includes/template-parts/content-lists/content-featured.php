@@ -59,7 +59,8 @@
 
         $args = array(
             'post_type' => $postType,
-            'posts_per_page' => 6
+            'posts_per_page' => 6,
+            'status' => 'publish'
         );
 
         $mostRecents = new WP_Query( $args );

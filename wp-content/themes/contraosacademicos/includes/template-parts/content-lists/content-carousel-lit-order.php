@@ -17,7 +17,8 @@
       <?php 
         $args = array(
           'post_type' => 'biblioteca',
-          'posts_per_page' => 12
+          'posts_per_page' => 12,
+          'status' => 'publish'
         );
 
         $post_list_order = new WP_Query( $args );
@@ -32,7 +33,7 @@
               </figure>
               <article class="list-item-article">
                 <h3 class="list-item-title"><?php echo get_the_title( $post_list_order->ID ); ?></h3>
-                <p class="list-item-text"><?php echo get_the_excerpt( $post_list_order->ID, 0, 100 ); ?></p>
+                <!-- <p class="list-item-text"><?php echo get_the_excerpt( $post_list_order->ID, 0, 100 ); ?></p> -->
               </article>
             </li>
           </a>

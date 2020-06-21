@@ -30,6 +30,11 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+	height: 30vh;
+	margin-top: 34px;
+	@include tablet {
+		height: 70vh;
+	}
 }
 .coa-banner-title {
 	font: 400 2.5em $f-spectral;

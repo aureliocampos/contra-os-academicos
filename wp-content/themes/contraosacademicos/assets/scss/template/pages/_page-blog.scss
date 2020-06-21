@@ -16,10 +16,7 @@
   }
   .cards-figure {
     width: 100%;
-    height: 200px;
-    .cards-image {
-      height: 100%;
-    }
+    height: auto;
   }
   .cards-title {
     font: 800 1.1em $f-lato;
@@ -28,15 +25,15 @@
     line-height: 1.5;
   }
   .cards-category {
-    font: 800 0.9em $f-lato;
+    font: 800 1em $f-lato;
     color: $c-red;
   }
   .cards-date {
-    font: 600 0.9em $f-lato;
+    font: 600 1em $f-lato;
     color: $c-gray;
   }
   .cards-user {
-    font: 600 0.9em $f-lato;
+    font: 600 1em $f-lato;
     color: $c-black;
     margin-top: 0.5em;
   }
@@ -47,7 +44,7 @@
   }
   .cards-list-items {
     @include tablet{
-      @include flex($justify-content:center, $align-item:flex-start, $wrap:wrap);
+      @include flex($justify-content:flex-start, $align-item:flex-start, $wrap:wrap);
     }
     .cards {
       @include tablet {
@@ -76,16 +73,24 @@
     }
   }
   .cards-permalink {
-    display: flex;
-    @include flex($justify-content:flex-start);
+    @include flex($wrap:wrap);
   }
   .cards-figure {
-    height: 80px;
-    width: 30%;
-    margin-right: 0.5em;
+    height: auto;
+    width: 45%;
+    margin-right: 0.7em;
   }
   .cards-article {
-    width: 70%;
+    width: 50%;
+  }
+  .cards-info {
+    @include flex($flex-direction:column, $align-item:flex-start);
+  }
+  .cards-date {
+    margin-top: 0.7em;
+  }
+  .post-views {
+    margin: 0.7em 0 0 0;
   }
 }
 .section-default-page-loop {
