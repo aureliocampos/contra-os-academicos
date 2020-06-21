@@ -139,23 +139,3 @@
 		width: 70px;
 	}
 }
-.medias {
-	display: none;
-	@include tablet-landscape {
-		display: block;
-		width: 20%;
-	}
-  ul {
-    @include flex($justify-content:center, $align-item:center);
-    li {
-			margin: 0 0.5em;
-			cursor: pointer;
-      span {
-        display: block;
-        width: 25px;
-        height: 25px;
-        background: pink;
-      }
-    }
-  }
-}

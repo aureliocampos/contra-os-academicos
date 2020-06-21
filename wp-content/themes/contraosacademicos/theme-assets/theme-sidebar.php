@@ -1,4 +1,4 @@
-<?php
+<?php  // Não utilizado
     function sidebarsAll() {
         register_sidebar(
             array (

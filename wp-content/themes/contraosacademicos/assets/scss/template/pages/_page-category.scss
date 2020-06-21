@@ -33,6 +33,7 @@
     @include flex($justify-content:space-between);
   }
   .sidebar-category {
+    position: relative;
     .title-object {
       font: 800 1em $f-lato;
       color: $c-gray;
@@ -43,6 +44,15 @@
       margin: 0.3em 0 0 0.5em;
     }
     .all-categories {
+      @include smartphone {
+        position: absolute;
+        left: -30rem;
+        transition: 400ms;
+        background: white;
+        width: 70%;
+        z-index: 1;
+        padding-left: 1em;
+      }
       margin-top: 1.5em;
       .categories {
         list-style: none;
@@ -64,7 +74,7 @@
       }
     }
     @include notebook {
-      position: relative;
+      
       width: 22%;
     }
     .sidebar-category-list {

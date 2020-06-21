@@ -20,3 +20,34 @@
   margin: 0 auto;
 }
 
+.medias {
+	display: none;
+	@include tablet-landscape {
+		display: block;
+		width: 20%;
+	}
+  .medias-list {
+    @include flex($justify-content:center, $align-item:center);
+    .medias-item {
+      width: 20px;
+      text-align: center;
+			margin: 0 0.5em;
+      cursor: pointer;
+      .media-link {
+        font-size: 1.2em;
+        color: $c-light-gray;
+      }
+    }
+  }
+}
+
+.search-button {
+  width: 40%;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  i {
+    font-size: 1.1em;
+    color: $c-light-gray;
+  }
+}

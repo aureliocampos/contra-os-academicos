@@ -16,6 +16,9 @@
 				<img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/cropped-banner-coa-teste.png" alt="" class="embed-responsive">
 			</figure>
 		</div>
+		<div class="search-button">
+			<i class="fas fa-search"></i>
+		</div>
 		<div class="coa-header-menu">
 			<div class="coa-menu-hamburguer">
 				<div class="coa-line"></div>
@@ -32,18 +35,11 @@
 			'theme_location'  => '',
 			) ); ?> 
 			<div class="medias">
-				<ul>
-					<li>
-						<span></span>
-					</li>
-					<li>
-						<span></span>
-					</li>
-					<li>
-						<span></span>
-					</li>
+				<ul class="medias-list">
+					<li class="medias-item"><a href="http://" class="media-link"><i class="fab fa-facebook-f"></i></a></li>
+					<li class="medias-item"><a href="http://" class="media-link"> <i class="fab fa-instagram"></i></a></li>
+					<li class="medias-item"><a href="http://" class="media-link"><i class="fab fa-twitter"></i></a></li>
 				</ul>
 			</div>
-			<div class="search-button"></div>
 	</div>
 </header>
