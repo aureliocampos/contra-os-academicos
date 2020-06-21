@@ -11,8 +11,9 @@
         <p class="paragraph">No caso das traduções, ficaremos felizes se o leitor nos enviar junto ao anexo o link do texto original.</p>
         <p class="paragraph">No caso de transcrições, é importante enviar com o anexo alguma autorização do autor das aulas.</p>
       </div>
-      <div class="column">
-        <h1 style="color: yellow; font-size: 3em">Formulário</h1>
+      <div class="column form-send-work">
+        <h3 class="title">Envie seu trabalho:</h3>
+        <?php echo do_shortcode('[contact-form-7 id="4098" title="Formulário - Seja Editor"]'); ?>
       </div>
     </div>
   </div>

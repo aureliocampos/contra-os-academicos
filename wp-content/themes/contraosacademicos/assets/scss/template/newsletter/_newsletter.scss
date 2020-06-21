@@ -10,12 +10,49 @@
   text-align: center;
   margin-top: 1em;
 }
+.newsletter-form {
+  @include tablet {
+    width: 500px;
+    margin: 0 auto;
+  }
+  input[type=email] {
+    width: 250px;
+    font: 400 1em $f-lato;
+    padding: 0.5em;
+    @include tablet {
+      width: 400px;
+    }
+  }
+  p {
+    &:first-of-type {
+      display: none;
+    }
+    &:last-of-type {
+      width: 70px;
+      float: right;
+    }
+    input[type=submit]{
+      padding: 0.5em;
+      width: 100%;
+      font: 800 1em $f-lato;
+      color: $c-black;
+      background-color: $c-yellow;
+      border-color: $c-yellow;
+      border-style: solid;
+    }
+  }
+}
 .news-optin {
   font: 300 0.9em $f-lato;
   color: $c-white;
   line-height: 1.5;
   text-align: center;
   margin-top: 2em;
+  @include tablet {
+    max-width: 700px;
+    margin: 0 auto;
+    clear: both;
+  }
   strong {
     color: $c-yellow;
     font-weight: 600;
