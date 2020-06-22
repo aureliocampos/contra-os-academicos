@@ -1,0 +1,37 @@
+.page-contact {
+  padding-top: 8rem;
+  .form-page-contact {
+    max-width: 500px;
+    margin: 3rem auto;
+    form {
+      label {
+        font: 600 1em $f-lato;
+        color: $c-black;
+      }
+      p {
+        margin: 1em 0 0.5em 0;
+      }
+      input {    
+        width: 100%;
+        font: 400 1em $f-lato;
+        padding: 5px;
+        border-radius: 5px;
+      }
+      textarea {
+        width: 98%;
+        font: 400 1em $f-lato;
+        padding: 5px;
+        border-radius: 5px;
+      }
+      input[type=submit] {
+        display: block;
+        width: 150px;
+        height: 45px;
+        font: 800 1.3em $f-lato;
+        color: $c-black;
+        background-color: $c-yellow;
+        margin: 1em auto;
+      }
+    }
+  }
+}

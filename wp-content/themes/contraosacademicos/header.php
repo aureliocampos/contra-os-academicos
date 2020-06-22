@@ -8,7 +8,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-
 <header class="coa-header">
 	<div class="coa-header-container">
 		<div class="container-logo">
@@ -17,7 +16,7 @@
 			</figure>
 		</div>
 		<div class="search-button">
-			<i class="fas fa-search"></i>
+			<i id="open-search" class="fas fa-search"></i>
 		</div>
 		<div class="coa-header-menu">
 			<div class="coa-menu-hamburguer">

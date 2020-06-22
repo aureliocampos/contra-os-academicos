@@ -130,6 +130,17 @@
             'icon'              => 'edit-large',
             'keywords'          => array(),
         ));
+        acf_register_block_type(array(
+            'name'              => 'page-contact',
+            'title'             => __('Página de contato Contra os Acdêmicos'),
+            'description'       => __('Página de contato Contra os Acdêmicos'),
+            'render_template'   => 'includes/template-parts/pages/contact-default-content.php',
+            'category'          => 'coa-custom-blocks',
+            'mode'              => 'edit',
+            'align'             => 'wide',
+            'icon'              => 'email-alt',
+            'keywords'          => array(),
+        ));
       }
   }
   add_action('acf/init', 'coa_acf_blocks_init');

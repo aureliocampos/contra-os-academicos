@@ -11,7 +11,7 @@
     cursor: pointer;
     @include tablet {
       width: 33%;
-      height: 350px;
+      height: 250px;
       margin: 0.5em 0;
     }
     @include notebook {
@@ -23,7 +23,7 @@
     @include tablet {
       margin: 0 auto;
       overflow: hidden;
-      height: 350px;
+      height: 250px;
     }
     img {
       height: 100%;
