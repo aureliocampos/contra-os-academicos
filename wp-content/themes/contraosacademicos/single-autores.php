@@ -1,7 +1,7 @@
 <?php get_header();?>
     <?php if ( have_posts() ) : ?> 
         <?php while ( have_posts() ) : the_post(); ?>
-            <section class="coa-banner coa-banner-image banner-secondary" style="background-image: url('<?php echo get_the_post_thumbnail_url('');?>');height:70vh;">
+            <section class="coa-banner coa-banner-image banner-secondary" style="background-image: url('<?php echo get_the_post_thumbnail_url('');?>');">
             </section>
             <section class="single-section-container">
                 <main class="single-section-content"> 
