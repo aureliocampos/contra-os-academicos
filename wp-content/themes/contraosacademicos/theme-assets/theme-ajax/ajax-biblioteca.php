@@ -19,7 +19,7 @@
       $args = array(
           'post_type' => 'biblioteca',
           'post_status' => 'publish',
-          'posts_per_page' => '9',
+          'posts_per_page' => 12,
           'paged' => $paged,
       );
 

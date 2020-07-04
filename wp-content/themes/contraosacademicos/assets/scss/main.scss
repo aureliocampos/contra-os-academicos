@@ -44,7 +44,10 @@
   }
   #ajaxsearchlite1.wpdreams_asl_container {
     margin: 3rem auto 0 auto;
-    width: 90%;
+    width: 80%;
+    @include notebook {
+      width: 40%;
+    }
   }
   #ajaxsearchlite1 .probox .proinput input, div.asl_w .probox .proinput input {
     color: $c-white !important;

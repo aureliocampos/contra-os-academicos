@@ -35,9 +35,10 @@
 			) ); ?> 
 			<div class="medias">
 				<ul class="medias-list">
-					<li class="medias-item"><a href="http://" class="media-link"><i class="fab fa-facebook-f"></i></a></li>
-					<li class="medias-item"><a href="http://" class="media-link"> <i class="fab fa-instagram"></i></a></li>
-					<li class="medias-item"><a href="http://" class="media-link"><i class="fab fa-twitter"></i></a></li>
+					<li class="medias-item"><a href="https://www.facebook.com/contraosacademicos/" class="media-link" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+					<li class="medias-item"><a href="https://www.instagram.com/contraosacademicos/" class="media-link" target="_blank"> <i class="fab fa-instagram"></i></a></li>
+					<li class="medias-item"><a href="https://twitter.com/Contracademicos" class="media-link" target="_blank"><i class="fab fa-twitter"></i></a></li>
+					<li class="medias-item"><a href="https://www.youtube.com/channel/UC3NjjjKEtzVCJOu7N9jLXzg" class="media-link" target="_blank"><i class="fab fa-youtube"></i></a></li>
 				</ul>
 			</div>
 	</div>

@@ -34,15 +34,15 @@
 
 //column 1
 .single-section-container {
-  margin: 1.5em 0;
+  max-width: 1120px;
+  margin: 1.5em auto;
   @include notebook {
     @include flex($justify-content:space-between, $align-item:flex-start);
-    margin: 1.5em;
   }
   .single-section-content {
     padding: 0 1em;
     @include notebook {
-      width: 63%;
+      max-width: 680px;
       padding: 0 2em;
     }
   }
@@ -80,6 +80,12 @@
   }
   h2,h3,h4,h5,h6 {
     margin: 1.1em 0;
+  }
+  .section-title {
+    font: 600 1.6em $f-spectral;
+    @include notebook {
+      font-size: 2.3em;
+    }
   }
   // Tipografia
    h2 {
