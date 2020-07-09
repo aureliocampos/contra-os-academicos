@@ -82,3 +82,16 @@
     }
   }
 }
+.bbpress-wrapper {
+  max-width: 960px;
+  margin: 80px auto;
+}
+
+.bbpress {
+  .bbp-template-notice.info {
+    @include flex($justify-content:center, $align-item:center);
+    height: 50vh;
+    background-color: #fff;
+    border: none;
+  }
+}
