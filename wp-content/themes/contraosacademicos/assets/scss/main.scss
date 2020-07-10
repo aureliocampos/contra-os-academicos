@@ -95,3 +95,63 @@
     border: none;
   }
 }
+
+.wrap-forum-container {
+  max-width: 1040px;
+  margin: 8rem auto;
+  padding: 0 1em;
+}
+
+.notice.acf-to-rest-api-donation-notice {
+  display: none !important;
+}
+
+#af-wrapper {
+  #forum-breadcrumbs {
+    margin-top: 1em;
+  }
+}
+#template-forum #af-wrapper #profile-navigation a {
+  color: $c-yellow !important;
+}
+#template-forum #af-wrapper #profile-navigation a.active {
+  background-color: $c-black !important;
+  outline: 1px solid $c-white;
+}
+
+.affu-form-field {
+  @include flex($justify-content:center, $align-item:center);
+  .affu-form-icon {
+    width: 10%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: static;
+    padding: 0;
+  }
+  .affu-form-input {
+    width: 95%;
+    margin: 0;
+    input {
+      height: 30px;
+      margin: 0;
+      padding: 0.3em;
+    }
+  }
+  .affu-form-checkbox {
+    margin: 0;
+    margin-right: 10%;
+  }
+  .affu-form-submit {
+    font: 700 1em $f-lato;
+    text-transform: uppercase;
+    color: $c-yellow;
+    background-color: $c-black;
+    cursor: pointer;
+  }
+}
+.affu-form-row.affu-closed {
+  text-align: right;
+  cursor: pointer;
+}
