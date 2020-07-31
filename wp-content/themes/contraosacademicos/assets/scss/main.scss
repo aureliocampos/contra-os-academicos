@@ -14,6 +14,9 @@
 @import 'template/partners/partnes';
 @import 'template/newsletter/newsletter';
 
+html {
+  scroll-behavior: smooth;
+}
 .wrap-content .wp-block-group__inner-container {
   max-width: 1032px;
   padding: 0 1em;
@@ -23,6 +26,7 @@
   background-color: white;
 }
 
+/* Ajax Searh */
 .search-container {
   position: fixed;
   top: 0;
@@ -82,30 +86,18 @@
     }
   }
 }
-.bbpress-wrapper {
-  max-width: 960px;
-  margin: 80px auto;
-}
 
-.bbpress {
-  .bbp-template-notice.info {
-    @include flex($justify-content:center, $align-item:center);
-    height: 50vh;
-    background-color: #fff;
-    border: none;
-  }
-}
 
+
+/* Forum */
 .wrap-forum-container {
   max-width: 1040px;
   margin: 8rem auto;
   padding: 0 1em;
 }
-
 .notice.acf-to-rest-api-donation-notice {
   display: none !important;
 }
-
 #af-wrapper {
   #forum-breadcrumbs {
     margin-top: 1em;
@@ -118,7 +110,6 @@
   background-color: $c-black !important;
   outline: 1px solid $c-white;
 }
-
 .affu-form-field {
   @include flex($justify-content:center, $align-item:center);
   .affu-form-icon {
@@ -154,4 +145,12 @@
 .affu-form-row.affu-closed {
   text-align: right;
   cursor: pointer;
+}
+
+figure {
+  transition: 400ms;
+}
+
+span.post-views-icon.dashicons.dashicons-visibility {
+  color: $c-black;
 }

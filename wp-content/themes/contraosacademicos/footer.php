@@ -1,5 +1,17 @@
 <?php get_template_part('includes/template-parts/newsletter/newsletter');?>
 <footer class="coa-footer">
+    <span><a href="#main-content" class="go-up"><i class="fas fa-arrow-up"></i></a></span>
+    <div class="coa-footer-categories">
+        <h3 class="footer-categories-title">Veja também nossas categorias</h3>
+        <ul class="footer-list-categories">
+            <?php wp_list_categories( array(
+                'orderby'    => 'name',
+                'show_count' => false,
+                'title_li' => '',
+                'exclude'    => array( 1 )
+            ) ); ?> 
+        </ul>
+    </div>
     <div class="coa-footer-container">
         <div class="coa-footer-terms">
             <ul class="terms-items">

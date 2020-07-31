@@ -1,38 +1,70 @@
 // Carousel's
-function carouselSimple(element, items0, items600, items1000, items1600) {
-    $(element).owlCarousel({
-        loop: false,
-        margin: 15,
-        nav: true,
+$('.list-items-lit-content').owlCarousel({
+    loop: false,
+    margin: 15,
+    nav: true,
+    dots: true,
+    autoHeight:true,
+    responsive: {
+        0: {
+            items: 1
+        },
+        600: {
+            items:3
+        },
+        1000: {
+            items: 5
+        },
+        1600: {
+            items: 6
+        }
+    }
+});
+
+function carouselCenter(element) {
+    let $owl = $(element);
+    $owl.children().each( function( index ) {
+        $(this).attr( 'data-position', index );
+    });
+
+    $owl.owlCarousel({
+        center:true,
+        loop: true,
+        margin: 0,
+        nav: false,
         dots: true,
-        autoHeight:true,
+        lazyLoad: true,
         responsive: {
             0: {
-                items: items0
+                items: 1
             },
             600: {
-                items: items600
+                items: 1
             },
             1000: {
-                items: items1000
+                items: 5
             },
             1600: {
-                items: items1600
+                items: 7
             }
         }
     });
-}
-function carouselForId(index) {
-    $(index).find('section').each(function () {
-        var id = $(this).attr('id');
-        var html = "#"+id;
-        carouselSimple(html);
+    $(document).on('click', '.owl-item>li', function() {
+        $owl.trigger('to.owl.carousel', $(this).data( 'position' ));
     });
 }
-carouselForId('.carousel');
-carouselSimple('.list-items-lit-content', 1, 3, 5, 6);
 
-$( function() {
+$(document).ready(function(){
+    let items = $('.list-items-carousel-content');
+
+    for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+        let id = $(item).attr('id');
+        carouselCenter(`#${id}`);
+    }
+});
+
+  
+$(function() {
     $( "#coa-tabs" ).tabs();
-  } );
-
+});

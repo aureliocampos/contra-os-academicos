@@ -37,7 +37,7 @@
     height: auto;
     border: 1pt solid $c-light-gray;
     @include notebook {
-      min-height: 350px;
+      min-height: 300px;
     }
     .list-item-figure {
       height: auto;

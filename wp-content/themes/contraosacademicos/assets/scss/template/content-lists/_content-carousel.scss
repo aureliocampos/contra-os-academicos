@@ -22,10 +22,11 @@
     height: 400px;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: 100%;
     margin: 1em 0;
     padding: 1em 0 1.1em 0;
     border: 1px solid $c-white;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
     opacity: .3;
     @include transition(400ms);
     cursor: pointer;
@@ -46,7 +47,6 @@
     text-align: center;
     opacity: 0.8;
     padding: 1em;
-    border: 1px solid $c-gray;
     .list-item-title{
       font: 600 1.1em $f-lato;
       color: $c-white;

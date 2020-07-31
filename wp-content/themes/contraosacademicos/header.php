@@ -8,11 +8,13 @@
 </head>
 
 <body <?php body_class(); ?>>
-<header class="coa-header">
+<header id="coa-header" class="coa-header">
 	<div class="coa-header-container">
 		<div class="container-logo">
 			<figure class="coa-logo">
-				<img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/05/cropped-banner-coa-teste.png" alt="" class="embed-responsive">
+				<a href="<?php echo get_site_url(); ?>">
+				<img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/06/logo-png-branco.png" alt="" class="embed-responsive">
+				</a>
 			</figure>
 		</div>
 		<div class="search-button">

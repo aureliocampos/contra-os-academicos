@@ -14,27 +14,27 @@
      */
 
     include_once (get_template_directory (). '/theme-assets/theme-supports/custom-post-types.php');
-    // include_once (get_template_directory (). '/theme-assets/theme-supports/custom-taxonomy.php');
     include_once (get_template_directory (). '/theme-assets/theme-supports/theme-supports.php');
-    // include_once (get_template_directory (). '/theme-assets/theme-supports/widgets.php');
     include_once (get_template_directory (). '/theme-assets/theme-supports/custom-blocks.php');
 
+   
     /**
      * Arquivos de plugins auxiliares de programação.
      * E outras bibliotecas usadas via cdn.
      *
      */
     
+    // include_once (get_template_directory (). '/theme-assets/theme-libs/owl-carousel.php');
     include_once (get_template_directory (). '/theme-assets/theme-cdns/wp-cdns.php');
-    include_once (get_template_directory (). '/theme-assets/theme-libs/owl-carousel.php');
+   
 
     /**
      * Arquivos base de estilos e scripts para o tema.
      */
 
     include_once (get_template_directory (). '/theme-assets/theme-scripts/wp-scripts.php');
-     include_once (get_template_directory (). '/theme-assets/theme-ajax/ajax-blog.php');
-     include_once (get_template_directory (). '/theme-assets/theme-ajax/ajax-biblioteca.php');
+    include_once (get_template_directory (). '/theme-assets/theme-ajax/ajax-blog.php');
+    include_once (get_template_directory (). '/theme-assets/theme-ajax/ajax-biblioteca.php');
 
     // Remover auto p
 	remove_filter( 'the_excerpt', 'wpautop' );
@@ -64,7 +64,7 @@
 
     function disqus_embed($disqus_shortname) {
 		global $post;
-		wp_enqueue_script('disqus_embed','http://'.$disqus_shortname.'.disqus.com/embed.js');
+		wp_enqueue_script('disqus_embed','https://'.$disqus_shortname.'.disqus.com/embed.js');
 		echo '<div id="disqus_thread"></div>
 		<script type="text/javascript">
 			var disqus_shortname = "'.$disqus_shortname.'";
