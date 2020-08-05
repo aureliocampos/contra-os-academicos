@@ -5,20 +5,22 @@
             </section>
             <section class="single-section-container">
                 <main class="single-section-content"> 
-                    <div class="single-section-header">
-                        <div class="row"><?php get_breadcrumb(); ?></div>
-                        <div class="row">
+                <div class="single-section-header">
+                        <div class="single-breadcrumb"><?php get_breadcrumb(); ?></div>
+                        <div class="single-header-infos">
                             <?php 
                                 $autors = get_field('acf_autor_post');
                                 if( $autors ): ?>
                                 <?php foreach( $autors as $aut ): // variable must NOT be called $post (IMPORTANT) ?>
-                                Autor: <a class="autor-link" href="<?php echo get_permalink( $aut->ID ); ?>"><?php echo get_the_title( $aut->ID ); ?></a>
+                                <div class="single-header-info"><i class="fas fa-user"></i><a class="autor-link" href="<?php echo get_permalink( $aut->ID ); ?>"><?php echo get_the_title( $aut->ID ); ?></a></div>
                                 <?php endforeach; ?>
                             <?php endif; ?>
-                            <?php 
-                                $id_post = get_the_id();
-                                echo pvc_post_views( $id_post, $echo = true);
-                            ?>
+                            <div class=single-post-info>
+                                <?php 
+                                    $id_post = get_the_id();
+                                    echo pvc_post_views( $id_post, $echo = true);
+                                ?>
+                            </div>
                         </div>
                     </div>
                     <div class="single-content block-style">   
