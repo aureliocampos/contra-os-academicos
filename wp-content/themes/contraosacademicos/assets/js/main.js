@@ -2,9 +2,8 @@
 $('.list-items-lit-content').owlCarousel({
     loop: false,
     margin: 15,
-    nav: true,
+    nav: false,
     dots: true,
-    autoHeight:true,
     responsive: {
         0: {
             items: 1
@@ -20,7 +19,6 @@ $('.list-items-lit-content').owlCarousel({
         }
     }
 });
-
 function carouselCenter(element) {
     let $owl = $(element);
     $owl.children().each( function( index ) {
@@ -53,7 +51,6 @@ function carouselCenter(element) {
         $owl.trigger('to.owl.carousel', $(this).data( 'position' ));
     });
 }
-
 $(document).ready(function(){
     let items = $('.list-items-carousel-content');
 
@@ -62,9 +59,13 @@ $(document).ready(function(){
         let id = $(item).attr('id');
         carouselCenter(`#${id}`);
     }
-});
-
-  
+});  
 $(function() {
     $( "#coa-tabs" ).tabs();
 });
+
+$(window).on('load', function () {
+    $('#preloader .inner').fadeOut();
+    $('#preloader').delay(350).fadeOut('slow');
+    $('body').delay(350).css({'overflow': 'visible'});
+})

@@ -33,12 +33,13 @@
 }
 .list-items-lit-content {
   margin-top: 2em;
+  @include tablet {
+    @include flex($justify-content:center, $align-item:center);
+  }
   .list-item {
-    height: auto;
+    height: 330px;
+    width: auto;
     border: 1pt solid $c-light-gray;
-    @include notebook {
-      min-height: 300px;
-    }
     .list-item-figure {
       height: auto;
       width: 100%;

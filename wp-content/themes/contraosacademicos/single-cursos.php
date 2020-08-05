@@ -52,7 +52,7 @@
                                 </li>
                             <?php endwhile; wp_reset_postdata(); ?>
 
-                            <a href="http://localhost:8000/cursos" class="sidebar-link">Ir para o Cursos ></a>
+                            <a href="<?php echo get_site_url(); ?>/cursos" class="sidebar-link">Ir para o Cursos ></a>
                         </ul>
 
                     </aside>

@@ -6,14 +6,22 @@
             <section class="single-section-container">
                 <main class="single-section-content"> 
                     <div class="single-section-header">
-                        <div class="column"><?php get_breadcrumb(); ?></div>
-                        <?php 
-                            $autors = get_field('acf_autor_post');
-                            if( $autors ): ?>
-                            <?php foreach( $autors as $aut ): // variable must NOT be called $post (IMPORTANT) ?>
-                               <div class="column">Autor: <a class="autor-link" href="<?php echo get_permalink( $aut->ID ); ?>"><?php echo get_the_title( $aut->ID ); ?></a></div>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
+                        <div class="single-breadcrumb"><?php get_breadcrumb(); ?></div>
+                        <div class="single-header-infos">
+                            <?php 
+                                $autors = get_field('acf_autor_post');
+                                if( $autors ): ?>
+                                <?php foreach( $autors as $aut ): // variable must NOT be called $post (IMPORTANT) ?>
+                                <div class="single-header-info"><i class="fas fa-user"></i><a class="autor-link" href="<?php echo get_permalink( $aut->ID ); ?>"><?php echo get_the_title( $aut->ID ); ?></a></div>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                            <div class=single-post-info>
+                                <?php 
+                                    $id_post = get_the_id();
+                                    echo pvc_post_views( $id_post, $echo = true);
+                                ?>
+                            </div>
+                        </div>
                     </div>
                     <div class="single-content block-style">   
                         <h1 class="single-title"><?php the_title(); ?></h1>
@@ -37,7 +45,7 @@
                                 <li class="sidebar-category-item"><a href="<?php echo get_category_link( $cat->term_id ) ; ?>">| <?php echo $cat->cat_name; ?></a></li>
                             <?php endforeach; ?>
                             
-                            <a href="http://localhost:8000/categorias" class="sidebar-link">Todas as Categorias ></a>
+                            <a href="<?php echo get_site_url(); ?>/categorias" class="sidebar-link">Todas as Categorias ></a>
                         </ul>
                         
                         <ul class="sidebar-post-relationship cards-list-items">
@@ -72,7 +80,7 @@
                                 </li>
                             <?php endwhile; wp_reset_postdata(); ?>
 
-                            <a href="http://localhost:8000/blog" class="sidebar-link">Ir para o Blog ></a>
+                            <a href="<?php echo get_site_url(); ?>/blog" class="sidebar-link">Ir para o Blog ></a>
                         </ul>
                         <ul class="sidebar-autors-list">
                             <h3 class="sidebar-title">Autores(as)</h3>

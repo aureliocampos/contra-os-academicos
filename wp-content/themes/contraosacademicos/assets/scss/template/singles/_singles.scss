@@ -1,11 +1,12 @@
 // breadcrump and widgets
-.single-section-header {
-  @include flex($justify-content:space-between, $align-item:center, $wrap:wrap);
+.single-header-infos {
+  @include flex($justify-content:space-between, $align-item:center);
+  margin-top: 1em;
 }
 .breadcrumb-items {
   @include flex($justify-content:flex-start,$wrap: wrap);
   @include notebook {
-    margin: 1em;
+    margin: 1em 0;
   }
   .breadcrumb-item {
     font: 800 0.9em $f-lato;
@@ -189,6 +190,27 @@
   font: 700 1em $f-lato;
   color: $c-black;
   text-decoration: underline;
+  margin-left: 0.5rem;
+}
+.autor-content {
+  padding: 2em 1em;
+  .autor-content-title {
+    font: 700 1.3em Lato,sans-serif;
+    color: $c-black;
+  }
+  .autor-content-list {
+    .autor-content-item {
+      margin-top: 0.8rem;
+      .autor-content-link {
+        font: 700 .9em Lato,sans-serif;
+        color: $c-black;
+        &:hover {
+          color: $c-red;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }
 
 .tabs-items {
@@ -245,6 +267,10 @@
     a {
       font: 700 0.9em $f-lato;
       color: $c-black;
+      &:hover {
+        color: $c-red;
+        text-decoration: underline;
+      }
     }
   }
 }
@@ -253,4 +279,8 @@
   .cards {
     margin: 1.5em 0em;
   }
+}
+
+.post-views.entry-meta > span.post-views-icon.dashicons {
+  color: $c-black;
 }

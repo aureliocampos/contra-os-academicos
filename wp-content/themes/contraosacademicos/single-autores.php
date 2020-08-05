@@ -39,15 +39,15 @@
                                 </li>
                             <?php endwhile; wp_reset_postdata(); ?>
                         </ul>
-                        <div class="entry-content">
-                            <h2>Conteúdo desse Autor(a):</h2>
+                        <div class="autor-content">
+                            <h2 class="autor-content-title">Conteúdo desse Autor(a):</h2>
                             <?php 
                             $the_posts_autor = get_posts(array(
                                 'post_type' => 'post',
                                 'meta_query' => array(
                                     array(
-                                        'key' => 'acf_autor_post', // name of custom field
-                                        'value' => '"' . get_the_ID() . '"', // matches exactly "123", not just 123. This prevents a match for "1234"
+                                        'key' => 'acf_autor_post', 
+                                        'value' => '"' . get_the_ID() . '"',
                                         'compare' => 'LIKE'
                                     )
                                 )
@@ -55,10 +55,10 @@
 
                             ?>
                             <?php if( $the_posts_autor ): ?>
-                                <ul>
+                                <ul class="autor-content-list">
                                 <?php foreach( $the_posts_autor as $post_autor ): ?>
-                                    <li>
-                                        <a href="<?php echo get_permalink( $post_autor->ID ); ?>">
+                                    <li class="autor-content-item">
+                                        <a href="<?php echo get_permalink( $post_autor->ID ); ?>" class="autor-content-link">
                                             <?php echo get_the_title( $post_autor->ID ); ?>
                                         </a>
                                     </li>
