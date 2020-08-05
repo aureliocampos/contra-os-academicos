@@ -1,14 +1,6 @@
-.coa-footer {
-	position: relative;
-	.coa-footer-container {
-		background: $c-black-dark;
-		padding: 1.2em;
-	}
-}
 .coa-footer-terms {
 	.terms-items {
 		@include flex($justify-content:center, $align-item:center);
-		margin-top: 1em;
 		.terms-item {
 			.term-name {
 				font: 400 0.9em $f-lato;
@@ -60,51 +52,19 @@
 		}
 	}
 }
-.coa-footer-categories {
-  background-color: #000;
-  .footer-categories-title {
-    font: 600 1.2em $f-lato;
-    text-align: center;
-    color: $c-yellow;
-  }
-  .footer-list-categories {
-		column-count: 2;
-    width: auto;
-    padding: 3em 30px;
-    margin: 0 auto;
-    .cat-item {
-      a {
-        font: 400 1em $f-lato;
-        color: $c-white;
-        transition: 400ms;
-        &:hover {
-          color: $c-yellow;
-        }
-      }
-		}
-		@include notebook {
-			column-count: 4;
-			width: 60%;
-		}
-  }
-}
+
+
 /* Footer */
 .go-up {
-  text-decoration: none;
-  color: $c-black;
-  background-color: $c-yellow;
-  border-radius: 100%;
-  position: absolute;
-	top: auto;
-	bottom: 90px;
-	right: 50px;
   width: 50px;
-  height: 50px;
+  height: 35px;
+  font-size: 1.5em;
+  color: $c-black;
+  text-decoration: none;
+  background-color: $c-gray;
+  display: inline-block;
   text-align: center;
-  line-height: 50px;
-	font-size: 1.5em;
-	@include notebook {
-		top: 0;
-		bottom: auto;
-	}
+  &:hover {
+    background-color: $c-yellow;
+  }
 }

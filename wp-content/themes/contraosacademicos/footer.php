@@ -1,9 +1,16 @@
 <?php get_template_part('includes/template-parts/newsletter/newsletter');?>
 <footer class="coa-footer">
-    <span><a href="#main-content" class="go-up"><i class="fas fa-arrow-up"></i></a></span>
-    <div class="coa-footer-categories">
-        <h3 class="footer-categories-title">Veja também nossas categorias</h3>
-        <ul class="footer-list-categories">
+    <div class="coa-footer-about footer-section">
+        <h3 class="footer-section-title">Contra os Acadêmicos</h3>
+        <p class="about-text">Surgiu com o objetivo de melhorar o acesso aos estudos de Filosofia para todos aqueles que desejam aprofundar-se na busca pelo conhecimento e, principalmente, pela verdade.</p>
+        <div class="footer-donate">
+            <h3 class="footer-section-title">Apoie o Projeto</h3>
+        </div>
+    </div>
+
+    <div class="coa-footer-categories footer-section">
+        <h3 class="footer-section-title">Categorias</h3>
+        <ul class="categories-items">
             <?php wp_list_categories( array(
                 'orderby'    => 'name',
                 'show_count' => false,
@@ -12,7 +19,30 @@
             ) ); ?> 
         </ul>
     </div>
-    <div class="coa-footer-container">
+
+    <div class="coa-footer-post footer-section">
+        <h3 class="footer-section-title">Posts Recentes</h3>
+        <ul class="post-items">
+            <?php 
+                $args = array(
+                    'post_type' => 'post',
+                    'posts_per_page' => 6,
+                    'status' => 'publish'
+                );
+
+                $mostRecents = new WP_Query( $args );
+
+                if( $mostRecents->have_posts() ) : while ( $mostRecents->have_posts() ) : $mostRecents->the_post(); ?>
+                <li class="post-item">
+                    <a href="<?php echo get_the_permalink( $mostRecents->ID ); ?>" class="post-link">
+                    <?php the_title(); ?></a>
+                </li>   
+                <?php endwhile;?>      
+                <?php wp_reset_postdata();?>
+            <?php endif; ?>
+        </ul>
+    </div>
+    <div class="coa-footer-container footer-section">
         <div class="coa-footer-terms">
             <ul class="terms-items">
                 <li class="terms-item">
@@ -28,15 +58,9 @@
             <p class="lincense-text">© Contra os Acadêmicos 2020 All Rights Reserved</p>
         </div>
     </div>
+    <div class="footer-button-back"><a href="#main-content" class="go-up"><i class="fas fa-arrow-up"></i></a></div>
 </footer>
-<div id="search-target">
-    <div class="search-container">
-        <div class="search-header"><i id="closed-search" class="fas fa-times"></i></div>
-        <div class="search-content">
-        <?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>
-        </div>
-    </div>
-</div>
+<?php get_template_part('includes/template-parts/search/input-search');?>
 <?php wp_footer(); ?>
 </body>
 </html>

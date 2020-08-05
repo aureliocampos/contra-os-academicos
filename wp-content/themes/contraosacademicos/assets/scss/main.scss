@@ -215,3 +215,80 @@ span.post-views-icon.dashicons.dashicons-visibility {
   } 
 }
 
+.coa-footer {
+  background-color: $c-black-dark;
+  padding: 3em 0 1em 0;
+  @include tablet-landscape {
+    @include flex($justify-content:space-around, $align-item:flex-start, $wrap:wrap);
+  }
+  .footer-section {
+    padding: 1.5em 1em;
+    @include tablet-landscape {
+      width: 28%;
+    }
+  }
+  .footer-section-title {
+    font: 700 1.4em $f-lato;
+    color: $c-light-gray;
+  }
+  
+}
+.coa-footer-about {
+  .about-text {
+    font: 400 1em $f-lato;
+    color: $c-white;
+    margin-top: 1rem;
+    line-height: 1.5;
+  }
+  .footer-donate {
+    margin-top: 2rem;
+  }
+}
+
+.coa-footer-categories {
+  .categories-items {
+    @include flex($justify-content:center, $align-item:center, $wrap:wrap);
+    .cat-item {
+      margin-top: 1rem;
+      width: 50%;
+      a {
+        font: 400 1em $f-lato;
+        color: $c-white;
+        transition: 400ms;
+        &:hover {
+          color: $c-red;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+.coa-footer-post {
+  .post-items {
+    .post-item {
+      margin-top: 1rem;
+      .post-link {
+        font: 400 1em $f-lato;
+        color: $c-white;
+        transition: 400ms;
+        &:hover {
+          color: $c-red;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+.footer-button-back {
+  text-align: center;
+  @include tablet-landscape {
+    width: 100%;
+    position: absolute;
+  }
+}
+
+.coa-footer-container.footer-section {
+  @include tablet-landscape{
+    width: 100%;
+  }
+}
