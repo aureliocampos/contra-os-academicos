@@ -174,3 +174,29 @@
 		cursor: pointer;
   }
 }
+
+.header-donate {
+  @include flex($justify-content: flex-end);
+  width: 100%;
+  height: auto;
+  background-color: $c-yellow;
+  font: 400 1rem $f-lato;
+  .header-cta {
+    padding: 0.5rem 1rem;
+    display: block;
+		border: 2px solid $c-red;
+		color: $c-red;
+    margin: 0.3rem 2rem;
+    font-weight: 600;
+    text-decoration: none;
+		border-radius: 5px;
+		transition: 300ms;
+		&:hover {
+			background-color: $c-red;
+			color: $c-yellow;
+		}
+		i {
+			margin-left: 0.3rem;
+		}
+	}
+}

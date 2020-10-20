@@ -8,17 +8,22 @@
         <p class="section-subtitle text-center"><?php echo get_field('acf_section_subtitle'); ?></p>
       <?php endif; ?>
     <?php 
-      $images = get_field('acf_image_gallery');
-      if( $images ): ?>
-          <ul class="list-items-images">
-              <?php foreach( $images as $image ): ?>
-                  <li class="list-item">
-                    <figure class="list-item-figure">
-                      <img src="<?php echo esc_url($image['sizes']['medium']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="embed-responsive image">
-                    </figure>
-                  </li>
-              <?php endforeach; ?>
-          </ul>
+      $rows = get_field('acf_image_gallery');
+        if( $rows ): ?>
+        <ul class="list-items-images">
+          <?php foreach( $rows as $row ): 
+              $image = $row['acf_image'];
+              $link = $row['acf_url'];
+            ?>
+            <li class="list-item">
+              <a href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $link['target'] ? $link['target'] : '_self' ); ?>">
+                <figure class="list-item-figure">
+                  <img src="<?php echo esc_url($image['sizes']['medium']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="embed-responsive image">
+                </figure>  
+              </a>
+            </li>
+            <?php endforeach; ?>
+        </ul>
       <?php endif; ?>
       <?php 
       $sectionCTA = get_field('acf_section_cta');

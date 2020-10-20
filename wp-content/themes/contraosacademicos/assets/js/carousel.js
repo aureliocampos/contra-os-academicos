@@ -30,9 +30,8 @@ function carouselCenter(element) {
       center:true,
       loop: true,
       margin: 0,
-      nav: false,
       dots: true,
-      lazyLoad: true,
+      nav: false,
       responsive: {
           0: {
               items: 1
@@ -44,7 +43,7 @@ function carouselCenter(element) {
               items: 5
           },
           1600: {
-              items: 7
+              items: 6
           }
       }
   });
@@ -61,9 +60,4 @@ $(document).ready(function(){
       let id = $(item).attr('id');
       carouselCenter(`#${id}`);
   }
-});
-
-
-$(function() {
-  $( "#coa-tabs" ).tabs();
 });

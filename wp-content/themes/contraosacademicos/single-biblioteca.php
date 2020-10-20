@@ -33,11 +33,26 @@
                             <li class="tabs-item"><a href="#tab-2-references">Referências</a></li>
                         </ul>
                         <div class="tab-target" id="tab-1-comments"><?php disqus_embed('contraosacademicos'); ?></div>
-                        <div class="tab-target" id="tab-2-references"><h2>Referências</h2></div>
+                        <div class="tab-target" id="tab-2-references"><?php echo the_field('acf_post_reference'); ?></div>
                     </div>
                 </main>
                 <section class="single-sidebar-container">
                     <aside class="single-sidebar">
+                        <div class="sidebar-share">
+                            <h3 class="sidebar-title">Compartilhar</h3>
+                            <ul class="sidebar-medias-list">
+                                <li class="medias-item">
+                                    <a href="https://www.facebook.com/sharer.php?u=<?php the_permalink() ?>" title="Compartilhar <?php the_title();?> no Facebook" class="media-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li class="medias-item">
+                                    <a href="http://twitter.com/intent/tweet?text=<?php the_title();?>&url=<?php the_permalink();?>&via=Contracademicos" title="Twittar sobre <?php the_title();?>"class="media-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li class="medias-item">
+                                    <a href="https://web.whatsapp.com/send?text=<?php the_permalink() ?>" class="media-link whatsapp-web" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                    <a href="https://web.whatsapp.com/send?text=<?php the_permalink() ?>" class="media-link whatsapp-movel" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                </li>
+                            </ul>
+                        </div>  
                         <ul class="sidebar-category-list">
                             <h3 class="sidebar-title">Categoria(as)</h3>
                             <?php $category_detail=get_the_category();?>
@@ -81,7 +96,31 @@
 
                             <a href="<?php echo get_site_url(); ?>/biblioteca" class="sidebar-link">Ir para o Biblioteca ></a>
                         </ul>
+                        <?php $rows = get_field('acf_library_content'); if( $rows ): ?>
+                            <ul class="sidebar-library-list cards-list-items">
+                            <h3 class="sidebar-title">Livraria<h3>
 
+                                <?php foreach( $rows as $row ): 
+                                    $image = $row['acf_image'];
+                                    $title = $row['acf_title'];
+                                    $autor = $row['acf_autor'];
+                                    $link = $row['acf_link'];
+                                    ?>
+                                <li class="libray-items">
+                                    <a href="<?php echo esc_url( $link['url'] ); ?>" target="<?php echo esc_attr( $link['target'] ? $link['target'] : '_self' ); ?>" class="library-link">
+                                        <figure class="lib-figure">
+                                        <img src="<?php echo esc_url($image['sizes']['medium']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="embed-responsive lib-image">
+                                        </figure>
+                                        <div class="lib-info">
+                                            <p class="library-autor"><?php echo $autor; ?></p>
+                                            <h2 class="library-title"><?php echo $title; ?></h2>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php endif; ?>
                         <ul class="sidebar-autors-list">
                             <h3 class="sidebar-title">Autores(as)</h3>
                             <?php 

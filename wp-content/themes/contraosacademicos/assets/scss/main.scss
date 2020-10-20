@@ -215,83 +215,54 @@ span.post-views-icon.dashicons.dashicons-visibility {
   } 
 }
 
-.coa-footer {
-  background-color: $c-black-dark;
-  padding: 3em 0 1em 0;
-  @include tablet-landscape {
-    @include flex($justify-content:space-around, $align-item:flex-start, $wrap:wrap);
-  }
-  .footer-section {
-    padding: 1.5em 1em;
-    @include tablet-landscape {
-      width: 28%;
+.sidebar-share {
+  padding: 2em 1em 0 1em;
+  .sidebar-medias-list {
+    @include flex($justify-content:flex-start);
+    .medias-item {
+      margin: 1rem 1rem 0 0;
+      .media-link {
+        font-size: 1.5rem;
+        color: $c-black;
+      }
+      .whatsapp-web {
+        display: none;
+        @include notebook {
+          display: block;
+        }
+      }
+      .whatsapp-movel {
+        @include notebook {
+          display: none;
+        }
+      }
     }
   }
-  .footer-section-title {
-    font: 700 1.4em $f-lato;
-    color: $c-light-gray;
-    margin-bottom: 1rem;
-  }
-  
 }
-.coa-footer-about {
-  .about-text {
-    font: 400 1em $f-lato;
-    color: $c-white;
+
+.sidebar-library-list {
+  padding: 2em 1em;
+  .libray-items {
     margin-top: 1rem;
-    line-height: 1.5;
-  }
-  .footer-donate {
-    margin-top: 2rem;
   }
 }
-
-.coa-footer-categories {
-  .categories-items {
-    @include flex($justify-content:center, $align-item:center, $wrap:wrap);
-    .cat-item {
-      margin-top: 0.6rem;
-      width: 50%;
-      a {
-        font: 400 1em $f-lato;
-        color: $c-white;
-        transition: 400ms;
-        &:hover {
-          color: $c-red;
-          text-decoration: underline;
-        }
-      }
+.library-link {
+  @include flex($justify-content:flex-start);
+  .lib-figure {
+    width: 40%;
+  }
+  .lib-info {
+    width: 50%;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    .library-autor {
+      font: 400 1em $f-lato;
+      color: #2d2d2d;
     }
-  }
-}
-.coa-footer-post {
-  .post-items {
-    .post-item {
-      margin-top: 0.6rem;
-      .post-link {
-        font: 400 1em $f-lato;
-        color: $c-white;
-        transition: 400ms;
-        &:hover {
-          color: $c-red;
-          text-decoration: underline;
-        }
-      }
+    .library-title {
+      font: 700 1.5em $f-lato;
+      color: #2d2d2d;
+      margin-top: 0.5rem;
     }
-  }
-}
-.footer-button-back {
-  text-align: center;
-  @include tablet-landscape {
-    text-align: right;
-    margin-right: 1.5rem;
-    width: 100%;
-    position: absolute;
-  }
-}
-
-.coa-footer-container.footer-section {
-  @include tablet-landscape{
-    width: 100%;
   }
 }

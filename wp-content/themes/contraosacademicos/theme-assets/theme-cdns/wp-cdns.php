@@ -7,7 +7,7 @@ function register_javaScriptCDNs() {
     wp_register_script( 'jQuery-UI', 'https://code.jquery.com/ui/1.12.1/jquery-ui.js', null, null, true );
     wp_enqueue_script('jQuery-UI');
 
-    wp_register_script( 'fontAwesome', 'https://kit.fontawesome.com/d4a838a739.js', null, null, true );
+    wp_register_script( 'fontAwesome', 'https://kit.fontawesome.com/b94e322eff.js', null, null, true );
     wp_enqueue_script('fontAwesome');
 }
 

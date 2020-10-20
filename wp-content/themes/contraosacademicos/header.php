@@ -9,6 +9,9 @@
 
 <body <?php body_class(); ?>>
 <header id="coa-header" class="coa-header">
+	<div class="header-donate">
+		<a href="#donate" class="header-cta">Apoiar está iniciativa <i class="fas fa-chevron-right"></i></a>
+	</div>
 	<div class="coa-header-container">
 		<div class="container-logo">
 			<figure class="coa-logo">

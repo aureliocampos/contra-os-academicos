@@ -1,11 +1,11 @@
 <?php get_template_part('includes/template-parts/newsletter/newsletter');?>
 <footer class="coa-footer">
     <div class="coa-footer-about footer-section">
+    <figure class="about-figure">
+        <img src="https://contraosacademicos.com.br/wp-content/uploads/2018/05/banner-coa-teste.png" alt="" class="about-image embed-responsive">
+    </figure>
         <h3 class="footer-section-title">Contra os Acadêmicos</h3>
         <p class="about-text">Surgiu com o objetivo de melhorar o acesso aos estudos de Filosofia para todos aqueles que desejam aprofundar-se na busca pelo conhecimento e, principalmente, pela verdade.</p>
-        <div class="footer-donate">
-            <h3 class="footer-section-title">Apoie o Projeto</h3>
-        </div>
     </div>
 
     <div class="coa-footer-categories footer-section">
@@ -20,26 +20,30 @@
         </ul>
     </div>
 
-    <div class="coa-footer-post footer-section">
-        <h3 class="footer-section-title">Posts Recentes</h3>
-        <ul class="post-items">
-            <?php 
-                $args = array(
-                    'post_type' => 'post',
-                    'posts_per_page' => 6,
-                    'status' => 'publish'
-                );
-
-                $mostRecents = new WP_Query( $args );
-
-                if( $mostRecents->have_posts() ) : while ( $mostRecents->have_posts() ) : $mostRecents->the_post(); ?>
-                <li class="post-item">
-                    <a href="<?php echo get_the_permalink( $mostRecents->ID ); ?>" class="post-link">
-                    <?php the_title(); ?></a>
-                </li>   
-                <?php endwhile;?>      
-                <?php wp_reset_postdata();?>
-            <?php endif; ?>
+    <div id="donate" class="footer-donate footer-section">
+        <h3 class="footer-section-title">Apoie o Projeto</h3>
+        <ul class="donate-list">
+            <li class="donate-item">
+               <!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+                <form action="https://pagseguro.uol.com.br/checkout/v2/donation.html" method="post">
+                    <!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+                    <input type="hidden" name="currency" value="BRL" />
+                    <input type="hidden" name="receiverEmail" value="lazaro.nti@gmail.com" />
+                    <input type="hidden" name="iot" value="button" />
+                    <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/120x53-doar.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+                </form>
+                <!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+            </li>
+            <li class="donate-item">
+                <a href="https://pagseguro.uol.com.br/checkout/nc/nl/donation/sender-identification.jhtml?t=d611a2353dcf4554e5f3a066ce3005b13401eafc0d4b504d4ae18faa0c317257&e=true#rmcl" target="_blank" rel="noopener noreferrer" class="donate-link">
+                    <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/08/logo-pagseguro.png" alt="" class="donate-image embed-responsive">
+                </a>
+            </li>
+            <li class="donate-item">
+                <a href="https://apoia.se/contraosacademicos" target="_blank" rel="noopener noreferrer" class="donate-link">
+                <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2020/08/logo-apoiase.png" alt="" class="donate-image embed-responsive">
+                </a>
+            </li>
         </ul>
     </div>
     <div class="coa-footer-container footer-section">
