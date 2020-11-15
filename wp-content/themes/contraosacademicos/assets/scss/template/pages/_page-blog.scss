@@ -56,6 +56,12 @@
     }
   }
 }
+.column-primary.single-column {
+  margin: 0 auto;
+  @include tablet {
+    max-width: 80%;
+  }
+}
 .column-secondary {
   @include tablet{
     width: 24%;

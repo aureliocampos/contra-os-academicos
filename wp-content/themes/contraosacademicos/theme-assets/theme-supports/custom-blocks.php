@@ -1,5 +1,4 @@
 <?php
-
   function coa_block_categories( $categories ) {
     $category_slugs = wp_list_pluck( $categories, 'slug' );
     return in_array( 'coa-custom-blocks', $category_slugs, true ) ? $categories : array_merge(
@@ -14,9 +13,6 @@
     );
   }
   add_filter( 'block_categories', 'coa_block_categories', 5, 2 );
-
-
-
   function coa_acf_blocks_init() {
       if( function_exists('acf_register_block_type') ) {
 
@@ -113,6 +109,17 @@
             'title'             => __(' Conteúdo Padrão da Página de Biblioteca'),
             'description'       => __(' Conteúdo Padrão da Página de Biblioteca'),
             'render_template'   => 'includes/template-parts/pages/biblioteca-default-content.php',
+            'category'          => 'coa-custom-blocks',
+            'mode'              => 'edit',
+            'align'             => 'wide',
+            'icon'              => 'grid-view',
+            'keywords'          => array(),
+        ));
+        acf_register_block_type(array(
+            'name'              => 'autores-default-content',
+            'title'             => __(' Conteúdo Padrão da Página de Autores'),
+            'description'       => __(' Conteúdo Padrão da Página de Autores'),
+            'render_template'   => 'includes/template-parts/pages/autores-default-content.php',
             'category'          => 'coa-custom-blocks',
             'mode'              => 'edit',
             'align'             => 'wide',

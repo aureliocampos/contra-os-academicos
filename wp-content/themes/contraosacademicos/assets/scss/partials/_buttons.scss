@@ -75,7 +75,8 @@
   }
 }
 
-.loadmore-biblioteca {
+.loadmore-biblioteca,
+.loadmore-autores {
   @include flex($justify-content:center);
   padding: 1em;
   background: $c-black;

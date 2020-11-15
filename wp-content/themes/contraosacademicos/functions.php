@@ -34,7 +34,8 @@
     include_once (get_template_directory (). '/theme-assets/theme-scripts/wp-scripts.php');
     include_once (get_template_directory (). '/theme-assets/theme-ajax/ajax-blog.php');
     include_once (get_template_directory (). '/theme-assets/theme-ajax/ajax-biblioteca.php');
-    
+    include_once (get_template_directory (). '/theme-assets/theme-ajax/ajax-autores.php');
+
     // Remover auto p
 	remove_filter( 'the_excerpt', 'wpautop' );
 	remove_filter ('the_content', 'wpautop');
@@ -86,6 +87,13 @@
     
             case 'load_blog_posts':
                 load_posts_by_ajax_callback();
+                break;
+
+            case 'load_autores_posts':
+                load_autores_by_ajax_callback();
+                break;
+
+            default:
                 break;
         }
     
