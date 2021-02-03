@@ -28,6 +28,17 @@
             'keywords'          => array(),
         ));
         acf_register_block_type(array(
+            'name'              => 'banners-content',
+            'title'             => __('Banner de conteúdo'),
+            'description'       => __('Um bloco de banner personalizado.'),
+            'render_template'   => 'includes/template-parts/banners/banner-content.php',
+            'category'          => 'coa-custom-blocks',
+            'mode'              => 'edit',
+            'align'             => 'wide',
+            'icon'              => 'admin-appearance',
+            'keywords'          => array(),
+        ));
+        acf_register_block_type(array(
             'name'              => 'content-blocks',
             'title'             => __('Blocos de Contéudo'),
             'description'       => __('Tipos de Bloco de Conteúdo Simples personalizado.'),

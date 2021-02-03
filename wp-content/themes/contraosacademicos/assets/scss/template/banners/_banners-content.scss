@@ -1,0 +1,54 @@
+.coa-banner-container.coa-banner-content-container {
+  max-width: 100%;
+}
+.nav-article-items {
+  margin-top: 100px;
+  @include notebook {
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+    grid-gap: 20px;
+  }
+  .article-item {
+    padding: 1rem 0;
+    position: relative;
+    @include notebook {
+      padding: 0;
+      &:nth-of-type(3) {
+        grid-row: 1 / span 2;
+        grid-column: 1 / span 2;
+        .article-title {
+          font-size: 2.5em;
+        }
+        .article-figure img{ 
+          height: 492px;
+        }
+      }
+    }
+    .article-figure img{
+      @include notebook {
+        min-height: 236.28px;
+        filter: brightness(0.5);
+        transition: 300ms;
+        &:hover {
+          filter: brightness(1);
+          transition: 300ms;
+        }
+      }
+    }
+    .article-title {
+      font: 800 1.25em $f-lato;
+      color: #170000;
+      margin-top: .5em;
+      line-height: 1.5;
+      text-align: center;
+      @include notebook {
+        text-align: left;
+        position: absolute;
+        bottom: 20px;
+        color: white;
+        padding: 0 1rem;
+      }
+    }
+  }
+}
+
